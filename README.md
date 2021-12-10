@@ -1,0 +1,2 @@
+# WebApp
+ŚiNWO Aplikacja bazowa
