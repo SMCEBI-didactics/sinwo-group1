@@ -26,3 +26,18 @@ def login_route():
         password = request.form["password"]
         state = f"{state} {login}:{password}"
     return render_template("login.html", state=state)
+
+
+               
+
+
+  
+
+
+               
+
+               
+
+               
+
+               
