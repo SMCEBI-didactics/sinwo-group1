@@ -3,18 +3,22 @@ services:
   db-as:
     image: mariadb
     environment:
-      - MARIADB_USER=admin
-      - MARIADB_PASSWORD=changeme
       - MARIADB_ROOT_PASSWORD=root
-      - MARIADB_DATABASE=mydb
     volumes:
-      - /tmp/TWOJLOSOWYFOLDER   ZMODYFIKUJ TO   :/var/lib/mysql  
+      - twojVOLUMEN:/var/lib/mysql  
 
   adminer-as:
     image: adminer
     environment:
       - ADMINER_DEFAULT_SERVER=db-as
     ports:
-      - 81  X  8:8080
-### DODAJ WebAPP
+      - TWOJPORT-81X8:8080
+### DODAJ kontener webapp bazujący na obrazie z7-TWOJLOGIN 
 
+
+
+
+
+
+volumes:
+  uzupełnij

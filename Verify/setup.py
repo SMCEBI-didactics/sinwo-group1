@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(
-    name="Verify-SMCEBI",
+    name="",
     description="",
-    version="v0.1",
+    version="",
     author="",
     author_email="",
     licence="",
