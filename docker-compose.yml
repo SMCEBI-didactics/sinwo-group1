@@ -2,7 +2,7 @@ version: "3"
 services: 
   db-as:
     image: mariadb
-    environment:
+    environment:.
       - MARIADB_ROOT_PASSWORD=root
     volumes:
       - twojVOLUMEN:/var/lib/mysql  
@@ -14,11 +14,6 @@ services:
     ports:
       - TWOJPORT-81X8:8080
 ### DODAJ kontener webapp bazujący na obrazie z7-TWOJLOGIN 
-
-
-
-
-
 
 volumes:
   uzupełnij
