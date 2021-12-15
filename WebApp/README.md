@@ -30,3 +30,10 @@ lub
 #uruchomienie na wszystkich interfejsach i porcie 9999
 (flask_venv) user@host:~$ flask run -h 0.0.0.0 -p 9999
 ```
+
+adres oraz port może być również zdefiniowany przezzmienne środowiskowe:
+
+```console
+(flask_venv) user@host:~$ export FLASK_RUN_HOST=0.0.0.0
+(flask_venv) user@host:~$ export FLASK_RUN_PORT=9999
+```
