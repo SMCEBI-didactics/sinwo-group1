@@ -1,3 +1,6 @@
+{% extends "index.html" %}
+{% block body %}
+
 Dodawanie 
 
 <b>STATUS</b> = {{ status }}
@@ -10,10 +13,13 @@ Dodawanie
 
 
 <b>stare wyniki:</b> <hr>
+
 {% for wyniki in stare_wyniki %}
-
-czas: {{ wyniki.timestamp.strftime("%H:%M %d-%m-%Y") }} wykonane działanie: {{ wyniki }} <br>
-
+czas: {{ wyniki.timestamp.strftime("%H:%M %d-%m-%Y") }} wykonane działanie: {{ wyniki }} <hr>
 {% endfor %}
+
 <hr>
+
+
+{% endblock %}
 

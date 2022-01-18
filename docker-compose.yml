@@ -3,9 +3,13 @@ services:
   webapp-core:
     image: webapp
     environment:
-      - flask_app=app.py
+      - FLASK_APP=???
+      - FLASK_ENV=???
     ports:
-      - 80:8000
+      - ??:??
 
 volumes:
-  sqlite:
+  ??
+
+networks:
+  ??

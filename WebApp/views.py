@@ -12,15 +12,26 @@ def home_route():
     """
     Strona główna
     """
-    return render_template("index.html")
+    return render_template("home.html")
 
 
 
 
 
-####################
-# Przykłady użycia #
-####################
+
+
+
+
+
+
+
+
+#######################
+#######################
+#######################
+#   Przykłady użycia  #
+# praca z bazą danych #
+#######################
 
 @app.route("/przyklad", methods=["GET", "POST"])
 def przyklad():
@@ -32,9 +43,11 @@ def przyklad():
     if request.method == "POST":
         liczba1 = request.form["liczba1"]
         liczba2 = request.form["liczba2"]
-        #osobny moduł, Patrz Modules/Dodaj
+
+        #  osobny moduł (funkcjonalność), Patrz Modules/Dodaj
         wynik = dodaj(float(liczba1), float(liczba2))
         status = f"{liczba1} + {liczba2} = {wynik}"
+
         # komunikacja z bazą; dodanie wyniku do bazy
         db_wynik = Dodawanie(liczba1=liczba1, liczba2=liczba2, wynik=wynik)
         try:
@@ -42,13 +55,33 @@ def przyklad():
             db.session.commit()
         except Exception as e:
             print(f"Błąd podczas dodawania wyniku do bazy \n{e}")
-        # komunikacja z bazą pobieranie starych wyników
-     
-    stare_wyniki = Dodawanie.query.filter().all() #zwraca tablice obiektów, zamiast all() można first(), dostęp do zawartości przez np. stare_wyniki[1].liczba1. Aby dodać warunek można użyć Dodawanie.query.filter(Dodawanie.wynik=="3.0").first()
+
+    # komunikacja z bazą: pobieranie zawartości tablicy
+    stare_wyniki = Dodawanie.query.filter().all() 
+    # zwraca tablice obiektów, zamiast all() można użyć first() (pierwszy obiekt), 
+    # dostęp do zawartości przez np. stare_wyniki[1].liczba1. 
+    # Aby dodać warunek można użyć: Dodawanie.query.filter(Dodawanie.wynik=="3.0").first()
+
+    #################################################
+    # Aktualizacja zawartości bazy możliwa przez:
+    #   wpis = Dodawanie.query.filter(id==3).first() # istnieje również metoda one()
+    #   wpis.liczba1 = 111
+    #   wpis.liczba2 = 999
+    #   db.session.commit()
+    #################################################
+    # Usuwanie wpisów z bazy: 
+    #   wpis = Dodawanie.query.filter(id==3).first()
+    #   db.session.delete(wpis) #używaj try:
+    #   db.session.commit()
+    #################################################
+
     return render_template("dodawanie.html", status=status, stare_wyniki=stare_wyniki)
 
 
-# inne przykłady
+
+##################
+# inne przykłady #
+##################
 
 @app.route("/api/<var>")
 def api_route(var):

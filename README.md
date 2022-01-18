@@ -14,13 +14,7 @@ user@host:~$ source flask_venv/bin/activate
 
 ### Użycie:
 
-```console
-user@host:~$ python app.py #działa na zdefiniowanym w app.py adresie o porcie
-```
-
-lub
-
-### Inicjalizacja sqlite (jeżeli nie istnieje)
+#### Inicjalizacja bazy sqlite (jeżeli nie istnieje)
 
 ```console
 
@@ -30,6 +24,8 @@ lub
 (flask_venv) user@host:~$ flask db upgrade
 
 ```
+
+#### Uruchamianie serwera
 
 ```console
 # ustawienie zmiennych środowiskowych
