@@ -18,8 +18,9 @@ class Users(db.Model):
 
 class Dodawanie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    liczba1 = db.Column(db.Integer)
-    liczba2 = db.Column(db.Integer)
+    liczba1 = db.Column(db.Text)
+    liczba2 = db.Column(db.Text)
+    wynik = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     def __repr__(self):
-        return '<Dodawanie {}>'.format(self.id)
+        return f'{self.liczba1}+{self.liczba2}={self.wynik}, '

@@ -1,6 +1,6 @@
 Dodawanie 
 
-<b>STATUS</b> = {{ state }}
+<b>STATUS</b> = {{ status }}
 
 <form  method="POST">
 	<input type="username" name="liczba1" placeholder="Liczba 1">
@@ -8,5 +8,12 @@ Dodawanie
 <input type="submit" value="Dodaj">
 </form>
 
+
+<b>stare wyniki:</b> <hr>
+{% for wyniki in stare_wyniki %}
+
+czas: {{ wyniki.timestamp.strftime("%H:%M %d-%m-%Y") }} wykonane działanie: {{ wyniki }} <br>
+
+{% endfor %}
 <hr>
 

@@ -1,5 +1,8 @@
 from WebApp import app
+from WebApp.models import *
 from flask import render_template, request
+
+from Dodaj.main import dodaj
 
 """
 """
@@ -19,20 +22,33 @@ def home_route():
 # Przykłady użycia #
 ####################
 
-@app.route("/temat2", methods=["GET", "POST"])
-def temat2():
+@app.route("/przyklad", methods=["GET", "POST"])
+def przyklad():
     """
-    Przykład dodania 2 liczb
+    Przykład: dodawanie 2 liczb
     """
     # pobranie zawartości liczb
     status = "Oczekiwanie na liczby"
     if request.method == "POST":
         liczba1 = request.form["liczba1"]
         liczba2 = request.form["liczba2"]
-        wynik = float(liczba1) + float(liczba2)
+        #osobny moduł, Patrz Modules/Dodaj
+        wynik = dodaj(float(liczba1), float(liczba2))
         status = f"{liczba1} + {liczba2} = {wynik}"
-        # komunikacja z bazą
-    return render_template("dodawanie.html", status=status)
+        # komunikacja z bazą; dodanie wyniku do bazy
+        db_wynik = Dodawanie(liczba1=liczba1, liczba2=liczba2, wynik=wynik)
+        try:
+            db.session.add(db_wynik)
+            db.session.commit()
+        except Exception as e:
+            print(f"Błąd podczas dodawania wyniku do bazy \n{e}")
+        # komunikacja z bazą pobieranie starych wyników
+     
+    stare_wyniki = Dodawanie.query.filter().all() #zwraca tablice obiektów, zamiast all() można first(), dostęp do zawartości przez np. stare_wyniki[1].liczba1. Aby dodać warunek można użyć Dodawanie.query.filter(Dodawanie.wynik=="3.0").first()
+    return render_template("dodawanie.html", status=status, stare_wyniki=stare_wyniki)
+
+
+# inne przykłady
 
 @app.route("/api/<var>")
 def api_route(var):
@@ -52,6 +68,19 @@ def login_route():
         password = request.form["password"]
         state = f"{state} {login}:{password}"
     return render_template("login.html", state=state)
+
+@app.route("/prompt", methods=["GET", "POST"])
+def prompt():
+    """
+    testuj polecenia 
+    """
+    state = "empty"
+    if request.method == "POST":
+        prompt = request.form["prompt"]
+        prompt = eval(prompt)
+        state = f"{prompt}"
+    return render_template("prompt.html", state=state)
+
 
 
                

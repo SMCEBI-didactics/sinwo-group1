@@ -23,7 +23,11 @@ lub
 ### Inicjalizacja sqlite (jeżeli nie istnieje)
 
 ```console
-(flask_venv) user@host:~$ pip install -r requirements.txt
+
+(flask_venv) user@host:~$ mkdir database
+(flask_venv) user@host:~$ flask db init
+(flask_venv) user@host:~$ flask db migrate # po modyfikacji models.py wystarczy wykonać tylko 2 ostatnie polecenia 
+(flask_venv) user@host:~$ flask db upgrade
 
 ```
 
@@ -35,7 +39,7 @@ lub
 (flask_venv) user@host:~$ flask run -h 0.0.0.0 -p 9999
 ```
 
-adres oraz port może być również zdefiniowany przezzmienne środowiskowe:
+adres oraz port może być również zdefiniowany przez zmienne środowiskowe:
 
 ```console
 (flask_venv) user@host:~$ export FLASK_RUN_HOST=0.0.0.0
