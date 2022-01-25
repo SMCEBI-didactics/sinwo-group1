@@ -1,8 +1,9 @@
 from WebApp import app
 from WebApp.models import *
 from flask import render_template, request
-
+import random
 from Dodaj.main import dodaj
+from Rock_paper.main import runRock
 
 """
 """
@@ -15,14 +16,21 @@ def home_route():
     return render_template("home.html")
 
 
+@app.route("/rock_paper.html", methods=["GET","POST"])
+def rock_paper():
+	""" Funkcja obslugujaca gre w kamien, papier, nozyce
 
+	    Parameters:
+		None
 
-
-
-
-
-
-
+	    Returns:
+		html file.
+	"""
+	if request.method == "POST":
+		var = request.form.get("nm")
+		return runRock(var)
+	else:
+		return render_template("rock_paper.html")
 
 
 
@@ -114,18 +122,5 @@ def prompt():
         state = f"{prompt}"
     return render_template("prompt.html", state=state)
 
-
-
-               
-
-
-  
-
-
-               
-
-               
-
-               
-
-               
+if __name__=="__main__":
+	app.run()
