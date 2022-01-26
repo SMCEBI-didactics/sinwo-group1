@@ -24,3 +24,4 @@ class Dodawanie(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     def __repr__(self):
         return f'{self.liczba1}+{self.liczba2}={self.wynik}, '
+

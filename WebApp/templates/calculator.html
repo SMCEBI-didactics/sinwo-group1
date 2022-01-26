@@ -1,0 +1,12 @@
+<h1>Kalkulator IP</h1>
+<form action="/calculator" method="POST">
+    <p>Adres IP komputera: <input type="text" name="address" /></p>
+    <p>Maska sieci: <input type="text" name="mask" /></p>
+    <p><input type="submit" name="submit" /></p>
+</form>
+{% if address %}
+    <p><b>Nazwa sieci:</b> {{address}}</p>
+    <p><b>Klasa adresu:</b> {{klasa}}</p>
+    <p><b>Adres rozgłoszeniowy:</b> {{broadcast}}</p>
+    <p><b>Zakres hostów:</b> {{range_down}} - {{range_up}}</p>
+{% endif %}

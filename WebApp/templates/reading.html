@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block body %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style_read.css') }}">
+    <div class="wrapper">
+      <input type="text" class="input-field">
+      <p>W rzekach zmieniać się mogą m.in. głębokość i szerokość cieku, charakter jego dna, stopień zadrzewienia brzegów i ilość wodorostów. Szerokość małych rzek może wynosić od zaledwie kilku kroków do kilkunastu metrów. Latem, gdy woda jest czysta, można niemal w każdym miejscu dojrzeć dno. Niejeden wędkarz popełnia błąd, sądząc, iż płycizny są bezrybne i nie zadaje sobie trudu obławiania takich miejsc. Tok rozumowania jest w takich wypadkach prosty:, jeśli woda jest tak płytka, to z pewnością nie ma w niej ryb. W rzeczywistości woda niejednokrotnie jest głębsza, niż się wydaje na pierwszy rzut oka - w niektórych miejscach może mieć zaledwie kilka centymetrów głębokości, lecz niewiele dalej, metr lub więcej - a ryby są prawdziwymi mistrzami kamuflażu.
+
+        W małych rzekach można spotkać nadspodziewanie duże ryby, np. okonie o wadze do pół kilograma, dwukilogramowe klenie, sporo małych szczupaków, kiełbie, płocie, jelce, a nawet kilkukilogramowe brzany. Ryby są obecne, ponieważ płytka i szybko płynąca woda jest doskonale natleniona, nawet podczas upałów. Do łowienia w małych rzekach można wybrać jeden z dwóch sposobów. Pierwszy polega na wytypowaniu stanowiska, w którym można spodziewać się ryb i łowieniu stacjonarnym. Woda przelewająca się przez progi na małych rzekach zostaje wzbogacona w dużą ilość tlenu. Ryb nie należy jednak szukać tuż pod zaporą (nie pozwala zresztą na to regulamin), lecz na pierwszym, położonym w regulaminowej odległości stanowisku, w którym mogą przebywać ryby - np. pod nawisami gałęzi.
+        
+        Widok wędkarza łowiącego z platformy ustawionej w nurcie może początkowo płoszyć ryby, lecz zachowanie spokoju i regularne nęcenie niewielkimi porcjami zanęty, pozwala wzbudzić ich zaufanie i zatrzymać na dłużej w łowisku. Po zanęceniu i zarzuceniu małej przynęty, np. białego robaka lub poczwarki, w ciągu kilku pierwszych godzin łowi się na ogół dużo małych ryb - kiełbi, uklej, jelców, płoci, okoni i niewielkich kłeni. Można też wywabić duże ryby - klenie i brzany - z ich stanowisk w wodorostach, trzcinach i w zacienionych miejscach pod gałęziami. Może w tym bardzo pomóc zanęcenie łowiska konopiami, które skłaniają ryby do intensywnego żerowania. Udanych połowów można wówczas oczekiwać nawet w upalne południe, choć większą szansę na ryby przynoszą późne popołudnie lub wieczór.
+        
+        Drugi sposób to namierzanie stanowisk poszczególnych okazów ryb i podawanie im dużych przynęt - np. skórki chleba, kawałka sera lub mielonki, bądź dużej dżdżownicy - na zestawie gruntowym, spławikowym lub wolnej żyłce. Najlepsza pora do tego rodzaju połowów to świt lub zmierzch. Jak znaleźć stanowiska ryb w niewielkiej rzece? Jest to sprawa zdrowego rozsądku - należy szukać miejsc o odpowiedniej sile nurtu, głębokości oraz zapewniających rybom możliwość ukrycia się w wodorostach lub cieniu zwisających gałęzi
+        najlepiej, gdy jedno miejsce jednocześnie spełnia wszystkie te warunki. Niektóre z odcinków małych rzek bywają jednak np. odpowiednio szybkie, lecz zbyt płytkie, inne - wystarczająco głębokie i zarośnięte, lecz przepływ wody jest w nich minimalny. Na zakolach małej rzeki mogą znajdować się dobre stanowiska. Zależy to od rodzaju brzegu, który może być podcinany lub rozmywany przez nurt. Najlepszych wyników można się spodziewać, jeśli zewnętrzny brzeg łuku jest ostro podcięty i osłonięty od góry gałęziami. Pod nim ryby najchętniej szukają stanowisk. Przynętę zarzuca się z miejsca położonego na wewnętrznym brzegu nieco powyżej łuku.</p>
+      <div class="content-box">
+        <div class="typing-text">
+          <p></p>
+        </div>
+        <div class="content">
+          <ul class="result-details">
+            <li class="wpm">
+              <p>WPM:</p>
+              <span id="SEC">0</span>
+            </li>
+          </ul>
+          <button id="start" onClick="Click(this.id)">START</button>
+          <button id="stop" onClick="Click(this.id)">STOP</button>
+        </div>
+      </div>
+    </div>
+    <script src="{{url_for('static', filename='js/script_read.js')}}"></script>
+  
+    {% endblock %}

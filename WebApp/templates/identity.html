@@ -1,0 +1,62 @@
+{% extends "index.html" %} {% block body %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static',filename='css/identity.css') }}"
+/>
+<form method="POST">
+  <label>
+    <input type="submit" value="Wygeneruj losową tożsamość" />
+  </label>
+  {% if pesel != null%}
+  <br />
+  <div class="center">
+    <label for="pesel"
+      >Pesel:
+      <input readonly name="pesel" value="{{ pesel }}" />
+    </label>
+  </div>
+  <div class="center">
+    <label for="data"
+      >Data urodzenia:
+      <input readonly name="data" value="{{ data_ur }}" />
+    </label>
+  </div>
+  <div class="center">
+    <label for="miejce_zamieszkania"
+      >Miejsce urodzenia:
+      <input
+        readonly
+        name="miejce_zamieszkania"
+        value="{{ miejce_zamieszkania }}"
+      />
+    </label>
+  </div>
+  <div class="center">
+    <label for="nr_telefonu"
+      >Numer telefonu:
+      <input readonly name="nr_telefonu" value="{{ nr_telefonu }}" />
+    </label>
+  </div>
+  <div class="center">
+    <label for="plec"
+      >Plec:
+      <input readonly name="plec" value="{{ plec }}" />
+    </label>
+  </div>
+  <div class="center">
+    <label for="kolor_wlosow"
+      >Kolor wlosow:
+      <input readonly name="kolor_wlosow" value="{{ kolor_wlosow }}" />
+    </label>
+  </div>
+  <div class="center">
+    <label for="kolor_oczu"
+      >Kolor oczu:
+      <input readonly name="kolor_oczu" value="{{ kolor_oczu }}" />
+    </label>
+  </div>
+  {% endif %}
+</form>
+
+{% endblock %}
