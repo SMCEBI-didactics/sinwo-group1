@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Tic_tac_toe.tic_tac_toe API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Tic_tac_toe.tic_tac_toe</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from easyAI import TwoPlayerGame, Human_Player, AI_Player, Negamax
+
+class runTic(TwoPlayerGame):
+    &#34;&#34;&#34; Klasa odpowiadająca za gre kółko i krzyżyk.
+
+        Numeracja pozycji:
+        1 2 3
+        4 5 6
+        7 8 9
+
+        Attributes:
+            players : Informacje o graczach
+            board list: deklaracja planszy
+            current_player int: informacja o tym, który gracz zaczyna
+
+    &#34;&#34;&#34;
+
+    def __init__(self, players):
+        self.players = players
+        self.board = [0 for i in range(9)]
+        self.current_player = 1 
+
+    def possible_moves(self):
+        &#34;&#34;&#34; Funkcja sprawdzająca jakie ruchy są dostępne.
+
+            Parameters:
+                None
+
+            Returns:
+                list: lista dostępnych ruchów
+        
+        &#34;&#34;&#34;
+        return [i + 1 for i, e in enumerate(self.board) if e == 0]
+
+    def make_move(self, move):
+        &#34;&#34;&#34; Funkcja odpowiadająca za poruszanie się
+
+            Parameters:
+                move int: Wybór ruchu
+
+            Returns:
+                None
+        
+        &#34;&#34;&#34;
+        self.board[int(move) - 1] = self.current_player
+
+    WIN_LINES = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],  # horiz.
+        [1, 4, 7],
+        [2, 5, 8],
+        [3, 6, 9],  # vertical
+        [1, 5, 9],
+        [3, 5, 7],  # diagonal
+    ]
+
+    def lose(self, who=None):
+        &#34;&#34;&#34; Funkcja sprawdzająca, czy ktoś wygrał.
+
+            Parameters:
+                who int: Gracz
+
+            Returns:
+                any(wins)
+        &#34;&#34;&#34;
+        if who is None:
+            who = self.opponent_index
+        wins = [
+            all([(self.board[c - 1] == who) for c in line]) for line in self.WIN_LINES
+        ]
+        return any(wins)
+
+    def is_over(self):
+        &#34;&#34;&#34; Funkcja sprawdzająca, czy gra dobiegła końca.
+
+            Parameters:
+                None
+
+            Returns:
+
+        &#34;&#34;&#34;
+        return (
+            (self.possible_moves() == [])
+            or self.lose()
+            or self.lose(who=self.current_player)
+        )
+
+    def show(self):
+        &#34;&#34;&#34; Funkcja printująca planszę.
+
+            Parameters:
+                None
+
+            Returns: 
+                None
+        &#34;&#34;&#34;
+        print(
+            &#34;\n&#34;
+            + &#34;\n&#34;.join(
+                [
+                    &#34; &#34;.join([[&#34;.&#34;, &#34;O&#34;, &#34;X&#34;][self.board[3 * j + i]] for i in range(3)])
+                    for j in range(3)
+                ]
+            )
+        )
+
+    def spot_string(self, i, j):
+        &#34;&#34;&#34; Funkcja 
+
+        &#34;&#34;&#34;
+        return [&#34;_&#34;, &#34;O&#34;, &#34;X&#34;][self.board[3 * j + i]]
+
+    def scoring(self):
+        opp_won = self.lose()
+        i_won = self.lose(who=self.current_player)
+        if opp_won and not i_won:
+            return -100
+        if i_won and not opp_won:
+            return 100
+        return 0
+
+    def winner(self):
+        &#34;&#34;&#34; Funkcja odpowiedzialna za zwracanie wygranego.
+
+            Parameters:
+                None
+
+            Returns:
+                String: Zwycięzca.
+        &#34;&#34;&#34;
+        if self.lose(who=2):
+            return &#34;AI Wins&#34;
+        return &#34;Tie&#34;
+
+ai = Negamax(6)
+
+def play_game(game_board, var):
+    &#34;&#34;&#34; Funkcja obsługująca grę w kółko i krzyżyk.
+
+        Parameters:
+            game_board String: Plansza.
+            var String: Wybór.
+
+        Returns:
+            ttt String: Wykonany ruch.
+            msg String: Wiadomość dotycząca ruchu/wyniku gry.
+    
+    &#34;&#34;&#34;
+    ttt = runTic([Human_Player(), AI_Player(ai)])
+    game_cookie = game_board
+    if game_cookie:
+        ttt.board = [int(x) for x in game_cookie.split(&#34;,&#34;)]
+    if &#34;choice&#34; in var:
+        ttt.play_move(var[&#34;choice&#34;])
+        if not ttt.is_over():
+            ai_move = ttt.get_move()
+            ttt.play_move(ai_move)
+    if &#34;reset&#34; in var:
+        ttt.board = [0 for i in range(9)]
+    if ttt.is_over():
+        msg = ttt.winner()
+    else:
+        msg = &#34;play move&#34;
+
+    return ttt, msg</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="Tic_tac_toe.tic_tac_toe.play_game"><code class="name flex">
+<span>def <span class="ident">play_game</span></span>(<span>game_board, var)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Funkcja obsługująca grę w kółko i krzyżyk.</p>
+<h2 id="parameters">Parameters</h2>
+<p>game_board String: Plansza.
+var String: Wybór.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ttt String</code></dt>
+<dd>Wykonany ruch.</dd>
+<dt><code>msg String</code></dt>
+<dd>Wiadomość dotycząca ruchu/wyniku gry.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def play_game(game_board, var):
+    &#34;&#34;&#34; Funkcja obsługująca grę w kółko i krzyżyk.
+
+        Parameters:
+            game_board String: Plansza.
+            var String: Wybór.
+
+        Returns:
+            ttt String: Wykonany ruch.
+            msg String: Wiadomość dotycząca ruchu/wyniku gry.
+    
+    &#34;&#34;&#34;
+    ttt = runTic([Human_Player(), AI_Player(ai)])
+    game_cookie = game_board
+    if game_cookie:
+        ttt.board = [int(x) for x in game_cookie.split(&#34;,&#34;)]
+    if &#34;choice&#34; in var:
+        ttt.play_move(var[&#34;choice&#34;])
+        if not ttt.is_over():
+            ai_move = ttt.get_move()
+            ttt.play_move(ai_move)
+    if &#34;reset&#34; in var:
+        ttt.board = [0 for i in range(9)]
+    if ttt.is_over():
+        msg = ttt.winner()
+    else:
+        msg = &#34;play move&#34;
+
+    return ttt, msg</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic"><code class="flex name class">
+<span>class <span class="ident">runTic</span></span>
+<span>(</span><span>players)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Klasa odpowiadająca za gre kółko i krzyżyk.</p>
+<p>Numeracja pozycji:
+1 2 3
+4 5 6
+7 8 9</p>
+<h2 id="attributes">Attributes</h2>
+<p>players : Informacje o graczach
+board list: deklaracja planszy
+current_player int: informacja o tym, który gracz zaczyna</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class runTic(TwoPlayerGame):
+    &#34;&#34;&#34; Klasa odpowiadająca za gre kółko i krzyżyk.
+
+        Numeracja pozycji:
+        1 2 3
+        4 5 6
+        7 8 9
+
+        Attributes:
+            players : Informacje o graczach
+            board list: deklaracja planszy
+            current_player int: informacja o tym, który gracz zaczyna
+
+    &#34;&#34;&#34;
+
+    def __init__(self, players):
+        self.players = players
+        self.board = [0 for i in range(9)]
+        self.current_player = 1 
+
+    def possible_moves(self):
+        &#34;&#34;&#34; Funkcja sprawdzająca jakie ruchy są dostępne.
+
+            Parameters:
+                None
+
+            Returns:
+                list: lista dostępnych ruchów
+        
+        &#34;&#34;&#34;
+        return [i + 1 for i, e in enumerate(self.board) if e == 0]
+
+    def make_move(self, move):
+        &#34;&#34;&#34; Funkcja odpowiadająca za poruszanie się
+
+            Parameters:
+                move int: Wybór ruchu
+
+            Returns:
+                None
+        
+        &#34;&#34;&#34;
+        self.board[int(move) - 1] = self.current_player
+
+    WIN_LINES = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],  # horiz.
+        [1, 4, 7],
+        [2, 5, 8],
+        [3, 6, 9],  # vertical
+        [1, 5, 9],
+        [3, 5, 7],  # diagonal
+    ]
+
+    def lose(self, who=None):
+        &#34;&#34;&#34; Funkcja sprawdzająca, czy ktoś wygrał.
+
+            Parameters:
+                who int: Gracz
+
+            Returns:
+                any(wins)
+        &#34;&#34;&#34;
+        if who is None:
+            who = self.opponent_index
+        wins = [
+            all([(self.board[c - 1] == who) for c in line]) for line in self.WIN_LINES
+        ]
+        return any(wins)
+
+    def is_over(self):
+        &#34;&#34;&#34; Funkcja sprawdzająca, czy gra dobiegła końca.
+
+            Parameters:
+                None
+
+            Returns:
+
+        &#34;&#34;&#34;
+        return (
+            (self.possible_moves() == [])
+            or self.lose()
+            or self.lose(who=self.current_player)
+        )
+
+    def show(self):
+        &#34;&#34;&#34; Funkcja printująca planszę.
+
+            Parameters:
+                None
+
+            Returns: 
+                None
+        &#34;&#34;&#34;
+        print(
+            &#34;\n&#34;
+            + &#34;\n&#34;.join(
+                [
+                    &#34; &#34;.join([[&#34;.&#34;, &#34;O&#34;, &#34;X&#34;][self.board[3 * j + i]] for i in range(3)])
+                    for j in range(3)
+                ]
+            )
+        )
+
+    def spot_string(self, i, j):
+        &#34;&#34;&#34; Funkcja 
+
+        &#34;&#34;&#34;
+        return [&#34;_&#34;, &#34;O&#34;, &#34;X&#34;][self.board[3 * j + i]]
+
+    def scoring(self):
+        opp_won = self.lose()
+        i_won = self.lose(who=self.current_player)
+        if opp_won and not i_won:
+            return -100
+        if i_won and not opp_won:
+            return 100
+        return 0
+
+    def winner(self):
+        &#34;&#34;&#34; Funkcja odpowiedzialna za zwracanie wygranego.
+
+            Parameters:
+                None
+
+            Returns:
+                String: Zwycięzca.
+        &#34;&#34;&#34;
+        if self.lose(who=2):
+            return &#34;AI Wins&#34;
+        return &#34;Tie&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>easyAI.TwoPlayerGame.TwoPlayerGame</li>
+<li>abc.ABC</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic.WIN_LINES"><code class="name">var <span class="ident">WIN_LINES</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic.is_over"><code class="name flex">
+<span>def <span class="ident">is_over</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Funkcja sprawdzająca, czy gra dobiegła końca.</p>
+<h2 id="parameters">Parameters</h2>
+<p>None</p>
+<p>Returns:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_over(self):
+    &#34;&#34;&#34; Funkcja sprawdzająca, czy gra dobiegła końca.
+
+        Parameters:
+            None
+
+        Returns:
+
+    &#34;&#34;&#34;
+    return (
+        (self.possible_moves() == [])
+        or self.lose()
+        or self.lose(who=self.current_player)
+    )</code></pre>
+</details>
+</dd>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic.lose"><code class="name flex">
+<span>def <span class="ident">lose</span></span>(<span>self, who=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Funkcja sprawdzająca, czy ktoś wygrał.</p>
+<h2 id="parameters">Parameters</h2>
+<p>who int: Gracz</p>
+<h2 id="returns">Returns</h2>
+<p>any(wins)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lose(self, who=None):
+    &#34;&#34;&#34; Funkcja sprawdzająca, czy ktoś wygrał.
+
+        Parameters:
+            who int: Gracz
+
+        Returns:
+            any(wins)
+    &#34;&#34;&#34;
+    if who is None:
+        who = self.opponent_index
+    wins = [
+        all([(self.board[c - 1] == who) for c in line]) for line in self.WIN_LINES
+    ]
+    return any(wins)</code></pre>
+</details>
+</dd>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic.make_move"><code class="name flex">
+<span>def <span class="ident">make_move</span></span>(<span>self, move)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Funkcja odpowiadająca za poruszanie się</p>
+<h2 id="parameters">Parameters</h2>
+<p>move int: Wybór ruchu</p>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_move(self, move):
+    &#34;&#34;&#34; Funkcja odpowiadająca za poruszanie się
+
+        Parameters:
+            move int: Wybór ruchu
+
+        Returns:
+            None
+    
+    &#34;&#34;&#34;
+    self.board[int(move) - 1] = self.current_player</code></pre>
+</details>
+</dd>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic.possible_moves"><code class="name flex">
+<span>def <span class="ident">possible_moves</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Funkcja sprawdzająca jakie ruchy są dostępne.</p>
+<h2 id="parameters">Parameters</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>lista dostępnych ruchów</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def possible_moves(self):
+    &#34;&#34;&#34; Funkcja sprawdzająca jakie ruchy są dostępne.
+
+        Parameters:
+            None
+
+        Returns:
+            list: lista dostępnych ruchów
+    
+    &#34;&#34;&#34;
+    return [i + 1 for i, e in enumerate(self.board) if e == 0]</code></pre>
+</details>
+</dd>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic.scoring"><code class="name flex">
+<span>def <span class="ident">scoring</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scoring(self):
+    opp_won = self.lose()
+    i_won = self.lose(who=self.current_player)
+    if opp_won and not i_won:
+        return -100
+    if i_won and not opp_won:
+        return 100
+    return 0</code></pre>
+</details>
+</dd>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic.show"><code class="name flex">
+<span>def <span class="ident">show</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Funkcja printująca planszę.</p>
+<h2 id="parameters">Parameters</h2>
+<p>None</p>
+<p>Returns:
+None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show(self):
+    &#34;&#34;&#34; Funkcja printująca planszę.
+
+        Parameters:
+            None
+
+        Returns: 
+            None
+    &#34;&#34;&#34;
+    print(
+        &#34;\n&#34;
+        + &#34;\n&#34;.join(
+            [
+                &#34; &#34;.join([[&#34;.&#34;, &#34;O&#34;, &#34;X&#34;][self.board[3 * j + i]] for i in range(3)])
+                for j in range(3)
+            ]
+        )
+    )</code></pre>
+</details>
+</dd>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic.spot_string"><code class="name flex">
+<span>def <span class="ident">spot_string</span></span>(<span>self, i, j)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Funkcja</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def spot_string(self, i, j):
+    &#34;&#34;&#34; Funkcja 
+
+    &#34;&#34;&#34;
+    return [&#34;_&#34;, &#34;O&#34;, &#34;X&#34;][self.board[3 * j + i]]</code></pre>
+</details>
+</dd>
+<dt id="Tic_tac_toe.tic_tac_toe.runTic.winner"><code class="name flex">
+<span>def <span class="ident">winner</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Funkcja odpowiedzialna za zwracanie wygranego.</p>
+<h2 id="parameters">Parameters</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>String</code></dt>
+<dd>Zwycięzca.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def winner(self):
+    &#34;&#34;&#34; Funkcja odpowiedzialna za zwracanie wygranego.
+
+        Parameters:
+            None
+
+        Returns:
+            String: Zwycięzca.
+    &#34;&#34;&#34;
+    if self.lose(who=2):
+        return &#34;AI Wins&#34;
+    return &#34;Tie&#34;</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Tic_tac_toe" href="index.html">Tic_tac_toe</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="Tic_tac_toe.tic_tac_toe.play_game" href="#Tic_tac_toe.tic_tac_toe.play_game">play_game</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Tic_tac_toe.tic_tac_toe.runTic" href="#Tic_tac_toe.tic_tac_toe.runTic">runTic</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Tic_tac_toe.tic_tac_toe.runTic.WIN_LINES" href="#Tic_tac_toe.tic_tac_toe.runTic.WIN_LINES">WIN_LINES</a></code></li>
+<li><code><a title="Tic_tac_toe.tic_tac_toe.runTic.is_over" href="#Tic_tac_toe.tic_tac_toe.runTic.is_over">is_over</a></code></li>
+<li><code><a title="Tic_tac_toe.tic_tac_toe.runTic.lose" href="#Tic_tac_toe.tic_tac_toe.runTic.lose">lose</a></code></li>
+<li><code><a title="Tic_tac_toe.tic_tac_toe.runTic.make_move" href="#Tic_tac_toe.tic_tac_toe.runTic.make_move">make_move</a></code></li>
+<li><code><a title="Tic_tac_toe.tic_tac_toe.runTic.possible_moves" href="#Tic_tac_toe.tic_tac_toe.runTic.possible_moves">possible_moves</a></code></li>
+<li><code><a title="Tic_tac_toe.tic_tac_toe.runTic.scoring" href="#Tic_tac_toe.tic_tac_toe.runTic.scoring">scoring</a></code></li>
+<li><code><a title="Tic_tac_toe.tic_tac_toe.runTic.show" href="#Tic_tac_toe.tic_tac_toe.runTic.show">show</a></code></li>
+<li><code><a title="Tic_tac_toe.tic_tac_toe.runTic.spot_string" href="#Tic_tac_toe.tic_tac_toe.runTic.spot_string">spot_string</a></code></li>
+<li><code><a title="Tic_tac_toe.tic_tac_toe.runTic.winner" href="#Tic_tac_toe.tic_tac_toe.runTic.winner">winner</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

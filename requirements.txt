@@ -5,6 +5,5 @@ python-dateutil
 
 Modules/Dodaj/
 Modules/Identity/
-
-
-
+Modules/Rock_paper/
+Modules/Tic_tac_toe/

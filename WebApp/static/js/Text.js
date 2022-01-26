@@ -1,0 +1,3 @@
+const text = [
+    "Siedziała tam także pewnego popołudnia na początku czerwca, grzejąc się w promieniach słońca wpadającego przez okno. Sad na zboczu przed domem spowijała białoróżowa chmura kwiecia, w którym uwijały się setki brzęczących pszczół. Thomas Lynde – potulny człowieczek, nazywany przez sąsiadów „mężem Rachel Lynde” – właśnie siał późną rzepę na zagonie za stodołą i to samo powinien robić też Matthew Cuthbert z Zielonych Szczytów na swoim wielkim polu za domem. Pani Rachel wiedziała, że powinien, bo poprzedniego dnia w sklepie Williama Blaira w Carmody słyszała na własne uszy, jak Matthew mówił do Petera Morrisona, że nazajutrz będzie siał rzepę. Oczywiście Peter go o to zapytał, bo Matthew Cuthbert znany był z tego, że nie lubi odzywać się sam z siebie."
+];
