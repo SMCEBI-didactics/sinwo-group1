@@ -3,6 +3,7 @@ from WebApp import app
 from WebApp.models import *
 from flask import render_template, request, make_response
 from Dodaj.main import dodaj
+from Calculator.main import compute
 from Identity.main import gen_identity
 from Rock_paper.main import runRock
 from Tic_tac_toe.main import play_game
@@ -18,6 +19,18 @@ def home_route():
     """
     return render_template("home.html")
 
+@app.route("/calculator", methods=["GET", "POST"])
+def calculator():
+    """
+    Strona z kalkulatorem IP
+    """
+    if request.method == "GET":
+        return render_template("calculator.html")
+    else:
+        a = request.form["address"]
+        m = request.form["mask"]
+        address, klasa, broadcast, range_up, range_down  = compute(a, m)
+        return render_template("calculator.html", address = address, klasa = klasa, broadcast = broadcast, range_up = range_up, range_down = range_down)
 
 @app.route("/typing")
 def typing():
