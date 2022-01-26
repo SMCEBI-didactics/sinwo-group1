@@ -23,14 +23,10 @@ def calculator():
     if request.method == "GET":
         return render_template("calculator.html")
     else:
-        return compute()
-
-
-
-
-
-
-
+        a = request.form["address"]
+        m = request.form["mask"]
+        address, klasa, broadcast, range_up, range_down  = compute(a, m)
+        return render_template("calculator.html", address = address, klasa = klasa, broadcast = broadcast, range_up = range_up, range_down = range_down)
 
 
 

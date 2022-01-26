@@ -4,7 +4,7 @@ import click
 def main():
     """
     """
-    return compute()
+    return "main"
 
 if __name__ == "__main__":
     main()
