@@ -3,6 +3,7 @@ from WebApp import app
 from WebApp.models import *
 from flask import render_template, request, make_response
 from Dodaj.main import dodaj
+from Identity.main import gen_identity
 from Rock_paper.main import runRock
 from Tic_tac_toe.main import play_game
 
@@ -131,6 +132,7 @@ def login_route():
         state = f"{state} {login}:{password}"
     return render_template("login.html", state=state)
 
+
 @app.route("/prompt", methods=["GET", "POST"])
 def prompt():
     """
@@ -143,5 +145,20 @@ def prompt():
         state = f"{prompt}"
     return render_template("prompt.html", state=state)
 
+
+@app.route("/identity", methods=["GET","POST"])
+def identity():
+    """
+    testuj polecenia 
+    """
+    state = "empty"
+    if request.method == "GET":
+        state = f"{request.remote_addr}"
+        return render_template("identity.html", state=state)
+    if request.method == "POST":
+        pesel,data_ur,miejce_zamieszkania,nr_telefonu,plec,kolor_wlosow,kolor_oczu = gen_identity()
+        return render_template("identity.html", pesel = pesel, data_ur = data_ur,miejce_zamieszkania = miejce_zamieszkania, nr_telefonu = nr_telefonu, plec = plec, kolor_wlosow = kolor_wlosow, kolor_oczu = kolor_oczu)
+
 if __name__=="__main__":
 	app.run()
+
