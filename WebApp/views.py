@@ -1,9 +1,10 @@
+from sqlalchemy import TEXT
 from WebApp import app
 from WebApp.models import *
-from flask import render_template, request
-import random
+from flask import render_template, request, make_response
 from Dodaj.main import dodaj
 from Rock_paper.main import runRock
+from Tic_tac_toe.main import play_game
 
 """
 """
@@ -16,7 +17,7 @@ def home_route():
     return render_template("home.html")
 
 
-@app.route("/rock_paper.html", methods=["GET","POST"])
+@app.route("/rock_paper", methods=["GET","POST"])
 def rock_paper():
 	""" Funkcja obslugujaca gre w kamien, papier, nozyce
 
@@ -32,6 +33,16 @@ def rock_paper():
 	else:
 		return render_template("rock_paper.html")
 
+
+@app.route("/tic_tac", methods=["GET", "POST"])
+def tic_tac():
+    cookie = request.cookies.get("game_board")
+    var = request.form
+    t, msg = play_game(cookie, var)
+    resp = make_response(render_template("tic_tac.html", t=t, msg=msg))
+    c = ",".join(map(str, t.board))
+    resp.set_cookie("game_board", c)
+    return resp
 
 
 #######################
