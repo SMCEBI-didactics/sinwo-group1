@@ -3,6 +3,7 @@ from WebApp.models import *
 from flask import render_template, request
 
 from Dodaj.main import dodaj
+from Calculator.main import compute
 
 """
 """
@@ -13,6 +14,16 @@ def home_route():
     Strona główna
     """
     return render_template("home.html")
+
+@app.route("/calculator", methods=["GET", "POST"])
+def calculator():
+    """
+    Strona z kalkulatorem IP
+    """
+    if request.method == "GET":
+        return render_template("calculator.html")
+    else:
+        return compute()
 
 
 
