@@ -8,6 +8,7 @@ from Rock_paper.main import runRock
 """
 """
 
+
 @app.route("/")
 def home_route():
     """
@@ -15,6 +16,14 @@ def home_route():
     """
     return render_template("home.html")
 
+
+@app.route("/typing")
+def typing():
+    return render_template("typing.html")
+
+@app.route("/reading")
+def reading():
+    return render_template("reading.html")
 
 @app.route("/rock_paper.html", methods=["GET","POST"])
 def rock_paper():
