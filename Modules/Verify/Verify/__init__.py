@@ -1,1 +1,1 @@
-from .verify import  hash_passwd
+from .verify import hash_passwd
