@@ -9,12 +9,22 @@ from Tic_tac_toe.main import play_game
 """
 """
 
+
 @app.route("/")
 def home_route():
     """
     Strona główna
     """
     return render_template("home.html")
+
+
+@app.route("/typing")
+def typing():
+    return render_template("typing.html")
+
+@app.route("/reading")
+def reading():
+    return render_template("reading.html")
 
 
 @app.route("/rock_paper", methods=["GET","POST"])
