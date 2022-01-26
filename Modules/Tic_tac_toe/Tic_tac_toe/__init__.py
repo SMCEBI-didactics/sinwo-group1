@@ -1,2 +1,2 @@
-from .tic_tac_toe import play_game, runTic
+from .tic_tac_toe import play_game
 
