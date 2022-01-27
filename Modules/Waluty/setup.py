@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="Kantor",
-    description="Wymiana walut",
+    description="Wymiana na inne waluty",
     version="v1.0",
     author="Bartłomiej Kaim",
     author_email="",
