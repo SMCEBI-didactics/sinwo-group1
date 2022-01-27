@@ -1,5 +1,47 @@
-# WebApp Core
+# Aplikacja zaliczeniowa z przedmiotu Środowiska i Narzędzia Wytwarzania Oprogramowania
 
+
+### Aplikacja robiona w:
+* Python (Flask)
+* HTML5
+* CSS
+* Bootstrap 5
+* Javascript
+* Docker
+
+---
+
+![Main](pic/main.jpg)
+
+---
+
+![KalkulatorWalut](pic/waluty.jpg)
+
+---
+
+![KalkulatorIp](pic/ip.jpg)
+
+---
+
+![TestCzytania](pic/read.jpg)
+
+---
+
+![TestPisania](pic/write.jpg)
+
+---
+
+![GenerowanieTozsamosci](pic/identity.jpg)
+
+---
+
+![KolkoIKrzyzyk](pic/tictac.jpg)
+
+---
+
+![KamienPapierNozyce](pic/rockpaperscissors.jpg)
+
+---
 
 ### Instalacja zależności:
 
