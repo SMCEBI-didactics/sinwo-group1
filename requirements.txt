@@ -2,7 +2,6 @@ Flask
 Flask-Migrate
 Flask-SQLAlchemy
 python-dateutil
-easyAI
 
 Modules/Dodaj/
 Modules/Calculator/

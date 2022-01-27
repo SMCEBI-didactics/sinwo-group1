@@ -7,6 +7,7 @@ setup(
     author="Oskar Kocjan",
     author_email="oskar.kocjan@smcebi.edu.pl",
     licence="MIT",
+    install_requires=['easyAI'],
     packages=['Tic_tac_toe'],
     entry_points={'console_scripts' : ['tic_tac_toe = Tic_tac_toe.main:main']}
 )
