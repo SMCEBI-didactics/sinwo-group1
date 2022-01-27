@@ -2,6 +2,14 @@ import random
 
 
 def runRock(x): 
+    """ Funkcja obsługująca grę w "Kamień, papier, nożyce".
+
+        Parameters:
+            x int: Wybór gracza.
+
+        Returns:
+            String
+    """
     var = int(x)
     en = random.randint(1,3)
 
