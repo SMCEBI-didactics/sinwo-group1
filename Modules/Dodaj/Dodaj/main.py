@@ -1,17 +1,14 @@
 import click
 
 def dodaj(a,b):
-    """
-    Dodaj 2 liczby
+    """ Funkcja dodaje dwie liczby.
 
-    :param liczba1: pierwsza liczba
-    :type float
-    :param liczba2: druga liczba
-    :type float
+        Args:
+            liczba1 (float): Liczba pierwsza.
+            liczba2 (float): Liczba druga.
 
-    :return: Suma liczb 
-    :rtype: float
-    
+        Returns:
+            float: Suma liczb.
     """
     return a+b
 

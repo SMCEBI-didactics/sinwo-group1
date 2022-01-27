@@ -7,6 +7,7 @@ from Calculator.main import compute
 from Identity.main import gen_identity
 from Rock_paper.main import runRock
 from Tic_tac_toe.main import play_game
+from Waluty.main import Przeliczwaluty
 
 """
 """
@@ -43,14 +44,6 @@ def reading():
 
 @app.route("/rock_paper", methods=["GET","POST"])
 def rock_paper():
-	""" Funkcja obslugujaca gre w kamien, papier, nozyce
-
-	    Parameters:
-		None
-
-	    Returns:
-		html file.
-	"""
 	if request.method == "POST":
 		var = request.form.get("nm")
 		return runRock(var)
@@ -60,13 +53,37 @@ def rock_paper():
 
 @app.route("/tic_tac", methods=["GET", "POST"])
 def tic_tac():
-    cookie = request.cookies.get("game_board")
-    var = request.form
-    t, msg = play_game(cookie, var)
-    resp = make_response(render_template("tic_tac.html", t=t, msg=msg))
-    c = ",".join(map(str, t.board))
-    resp.set_cookie("game_board", c)
-    return resp
+    if request.method == "POST":
+        cookie = request.cookies.get("game_board")
+        var = request.form
+        t, msg = play_game(cookie, var)
+        resp = make_response(render_template("tic_tac.html", t=t, msg=msg))
+        c = ",".join(map(str, t.board))
+        resp.set_cookie("game_board", c)
+        return resp
+    else:
+        cookie = request.cookies.get("game_board")
+        var = request.form.to_dict()
+        var['reset'] = ''
+        t, msg = (play_game(cookie, var))
+        resp = make_response(render_template("tic_tac.html", t=t, msg=msg))
+        c = ",".join(map(str, t.board))
+        resp.set_cookie("game_board", c)
+        return resp
+
+@app.route("/Przeliczwaluty", methods=["GET","POST"])
+def Przeliczwalute(): 
+    """ 
+    Funkcja przelicza wybraną walutę na PLN
+    """
+    status= "Ile pieniędzy"
+    if request.method == "POST":
+        Waluta = request.form["Waluty"]
+        Ilosc = request.form["Ilosc"]
+        wynik = Przeliczwaluty(float(Ilosc),Waluta)
+        status=f"Wynik = {wynik}"
+        print("Wynik = ",wynik)
+    return render_template("waluty.html",status = status)
 
 
 #######################

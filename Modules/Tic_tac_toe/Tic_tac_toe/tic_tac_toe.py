@@ -3,66 +3,63 @@ from easyAI import TwoPlayerGame, Human_Player, AI_Player, Negamax
 class runTic(TwoPlayerGame):
     """ Klasa odpowiadająca za gre kółko i krzyżyk.
 
-        Numeracja pozycji:
-        1 2 3
-        4 5 6
-        7 8 9
+        Numeracja pozycji:  
+        1 2 3  
+        4 5 6  
+        7 8 9  
 
         Attributes:
-            players : Informacje o graczach
-            board list: deklaracja planszy
-            current_player int: informacja o tym, który gracz zaczyna
+            players (list): Informacje o graczach.
+            board (list): deklaracja planszy.
+            current_player (int): informacja o tym, który gracz zaczyna.
 
     """
 
     def __init__(self, players):
         self.players = players
         self.board = [0 for i in range(9)]
+        print(type(players))
+        print(type(self.board))
         self.current_player = 1 
 
     def possible_moves(self):
         """ Funkcja sprawdzająca jakie ruchy są dostępne.
 
-            Parameters:
-                None
-
             Returns:
-                list: lista dostępnych ruchów
+                list: lista dostępnych ruchów.
         
         """
         return [i + 1 for i, e in enumerate(self.board) if e == 0]
 
     def make_move(self, move):
-        """ Funkcja odpowiadająca za poruszanie się
+        """ Funkcja odpowiadająca za poruszanie się.
 
-            Parameters:
-                move int: Wybór ruchu
-
-            Returns:
-                None
+            Args:
+                move (int): Wybór ruchu.
         
         """
         self.board[int(move) - 1] = self.current_player
 
+    # Zmienna klasy trzymająca linie, które oznaczają wygraną
     WIN_LINES = [
         [1, 2, 3],
         [4, 5, 6],
-        [7, 8, 9],  # horiz.
+        [7, 8, 9],
         [1, 4, 7],
         [2, 5, 8],
-        [3, 6, 9],  # vertical
+        [3, 6, 9],
         [1, 5, 9],
-        [3, 5, 7],  # diagonal
+        [3, 5, 7],
     ]
 
     def lose(self, who=None):
         """ Funkcja sprawdzająca, czy ktoś wygrał.
 
-            Parameters:
-                who int: Gracz
+            Args:
+                who (int): Gracz.
 
             Returns:
-                any(wins)
+                bool: Zwraca True lub False.
         """
         if who is None:
             who = self.opponent_index
@@ -74,11 +71,8 @@ class runTic(TwoPlayerGame):
     def is_over(self):
         """ Funkcja sprawdzająca, czy gra dobiegła końca.
 
-            Parameters:
-                None
-
             Returns:
-
+                bool: Zwraca True lub False.
         """
         return (
             (self.possible_moves() == [])
@@ -88,12 +82,6 @@ class runTic(TwoPlayerGame):
 
     def show(self):
         """ Funkcja printująca planszę.
-
-            Parameters:
-                None
-
-            Returns: 
-                None
         """
         print(
             "\n"
@@ -106,12 +94,24 @@ class runTic(TwoPlayerGame):
         )
 
     def spot_string(self, i, j):
-        """ Funkcja 
+        """ Funkcja sprawdzająca planszę.
+
+            Args:
+                i (int): Wiersze planszy.
+                j (int): Kolumny planszy.
+
+            Returns:
+                str: zwraca coś tam.
 
         """
         return ["_", "O", "X"][self.board[3 * j + i]]
 
     def scoring(self):
+        """ Funkcja odpowiedzialna za zwracanie wyniku.
+
+            Returns:
+                int: zwraca -100 lub 0 lub 100
+        """
         opp_won = self.lose()
         i_won = self.lose(who=self.current_player)
         if opp_won and not i_won:
@@ -123,28 +123,25 @@ class runTic(TwoPlayerGame):
     def winner(self):
         """ Funkcja odpowiedzialna za zwracanie wygranego.
 
-            Parameters:
-                None
-
             Returns:
-                String: Zwycięzca.
+                String: Zwraca wygranego.
         """
         if self.lose(who=2):
-            return "AI Wins"
-        return "Tie"
+            return "AI Wygrywa"
+        return "Remis"
 
 ai = Negamax(6)
 
 def play_game(game_board, var):
     """ Funkcja obsługująca grę w kółko i krzyżyk.
 
-        Parameters:
-            game_board String: Plansza.
-            var String: Wybór.
+        Args:
+            game_board (str): Aktualna plansza.
+            var (ImmutableMultiDict): Dokonany wybór.
 
         Returns:
-            ttt String: Wykonany ruch.
-            msg String: Wiadomość dotycząca ruchu/wyniku gry.
+            runTic: Obiekt klasy runTic.
+            str: Wiadomość dotycząca ruchu/wyniku gry.
     
     """
     ttt = runTic([Human_Player(), AI_Player(ai)])
@@ -161,6 +158,5 @@ def play_game(game_board, var):
     if ttt.is_over():
         msg = ttt.winner()
     else:
-        msg = "play move"
-
+        msg = "Wykonaj ruch"
     return ttt, msg

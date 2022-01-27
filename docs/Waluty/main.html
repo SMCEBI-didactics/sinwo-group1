@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>Rock_paper.main API documentation</title>
+<title>Waluty.main API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,26 +19,64 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>Rock_paper.main</code></h1>
+<h1 class="title">Module <code>Waluty.main</code></h1>
 </header>
 <section id="section-intro">
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">from Rock_paper import runRock
+<pre><code class="python">import click
 
-def main(x):
-    &#34;&#34;&#34; Funkcja zwracająca funkcję obsługującą grę &#34;Kamień, papier, nożyce&#34;.
-    
+def Przeliczwaluty(Ilosc,Waluta):
+    &#34;&#34;&#34; Funkcja przelicza wybraną walutę z PLN.  
+        W tej funkcji podaję się liczbę a potem w zależności od wyboru waluty przelicza na nią.
+
         Args:
-            x (int): Wybór gracza.
+            Ilosc (int): Ile PLN.
+            Waluta (str): Rodzaj waluty.
 
         Returns:
-            str: Rezultat gry.
-
+            float: Kwota po przeliczeniu.
     &#34;&#34;&#34;
-    return runRock(x)
+    wynik= None
+    if Waluta ==&#34;eur&#34; or Waluta ==&#34;EUR&#34;:
+        wynik = int(Ilosc) / 4.57
+    elif Waluta == &#34;gbp&#34; or Waluta == &#34;GBP&#34;:
+        wynik = int(Ilosc) / 5.48
+    elif Waluta == &#34;usd&#34; or Waluta == &#34;USD&#34;:
+        wynik = int(Ilosc) / 4.08
+    elif Waluta == &#34;aud&#34; or Waluta == &#34;AUD&#34;:
+        wynik = int(Ilosc) / 2.90
+    elif Waluta == &#34;chf&#34; or Waluta == &#34;CHF&#34;:
+        wynik = int(Ilosc) / 4.3872
+    elif Waluta == &#34;ars&#34; or Waluta == &#34;ARS&#34;:
+        wynik = int(Ilosc) / 0.04   
+    elif Waluta == &#34;hrk&#34; or Waluta == &#34;HRK&#34;:
+        wynik = int(Ilosc) / 0.61
+    elif Waluta == &#34;jpy&#34; or Waluta == &#34;JPY&#34;:
+        wynik = int(Ilosc) / 0.04
+    elif Waluta == &#34;mxn&#34; or Waluta == &#34;MXN&#34;:
+        wynik = int(Ilosc) / 0.20               
+    else:
+        return &#34;Error&#34;
+    return round(wynik,2)
+
+@click.command()
+@click.option(&#34;--Ilosc&#34;, type=float, prompt=&#34;Podaj liczbę&#34;)
+@click.option(&#34;--Waluta&#34;, type=str, prompt=&#34;Jaka waluta&#34;)
+def main(Ilosc, Waluta):
+    &#34;&#34;&#34; Funkcja wywołuje funkcję Przeliczwaluty
+    
+        Args:
+            Ilosc (int): Ile PLN.
+            Waluta (str): Rodzaj waluty.
+
+        Returns:
+            float: Kwota po przeliczeniu.
+    &#34;&#34;&#34;
+
+    return Przeliczwaluty(Ilosc,Waluta)
 
 if __name__ == &#34;__main__&#34;:
     main()</code></pre>
@@ -51,36 +89,61 @@ if __name__ == &#34;__main__&#34;:
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="Rock_paper.main.main"><code class="name flex">
-<span>def <span class="ident">main</span></span>(<span>x)</span>
+<dt id="Waluty.main.Przeliczwaluty"><code class="name flex">
+<span>def <span class="ident">Przeliczwaluty</span></span>(<span>Ilosc, Waluta)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Funkcja zwracająca funkcję obsługującą grę "Kamień, papier, nożyce".</p>
+<div class="desc"><p>Funkcja przelicza wybraną walutę z PLN.<br>
+W tej funkcji podaję się liczbę a potem w zależności od wyboru waluty przelicza na nią.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>x</code></strong> :&ensp;<code>int</code></dt>
-<dd>Wybór gracza.</dd>
+<dt><strong><code>Ilosc</code></strong> :&ensp;<code>int</code></dt>
+<dd>Ile PLN.</dd>
+<dt><strong><code>Waluta</code></strong> :&ensp;<code>str</code></dt>
+<dd>Rodzaj waluty.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>str</code></dt>
-<dd>Rezultat gry.</dd>
+<dt><code>float</code></dt>
+<dd>Kwota po przeliczeniu.</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def main(x):
-    &#34;&#34;&#34; Funkcja zwracająca funkcję obsługującą grę &#34;Kamień, papier, nożyce&#34;.
-    
+<pre><code class="python">def Przeliczwaluty(Ilosc,Waluta):
+    &#34;&#34;&#34; Funkcja przelicza wybraną walutę z PLN.  
+        W tej funkcji podaję się liczbę a potem w zależności od wyboru waluty przelicza na nią.
+
         Args:
-            x (int): Wybór gracza.
+            Ilosc (int): Ile PLN.
+            Waluta (str): Rodzaj waluty.
 
         Returns:
-            str: Rezultat gry.
-
+            float: Kwota po przeliczeniu.
     &#34;&#34;&#34;
-    return runRock(x)</code></pre>
+    wynik= None
+    if Waluta ==&#34;eur&#34; or Waluta ==&#34;EUR&#34;:
+        wynik = int(Ilosc) / 4.57
+    elif Waluta == &#34;gbp&#34; or Waluta == &#34;GBP&#34;:
+        wynik = int(Ilosc) / 5.48
+    elif Waluta == &#34;usd&#34; or Waluta == &#34;USD&#34;:
+        wynik = int(Ilosc) / 4.08
+    elif Waluta == &#34;aud&#34; or Waluta == &#34;AUD&#34;:
+        wynik = int(Ilosc) / 2.90
+    elif Waluta == &#34;chf&#34; or Waluta == &#34;CHF&#34;:
+        wynik = int(Ilosc) / 4.3872
+    elif Waluta == &#34;ars&#34; or Waluta == &#34;ARS&#34;:
+        wynik = int(Ilosc) / 0.04   
+    elif Waluta == &#34;hrk&#34; or Waluta == &#34;HRK&#34;:
+        wynik = int(Ilosc) / 0.61
+    elif Waluta == &#34;jpy&#34; or Waluta == &#34;JPY&#34;:
+        wynik = int(Ilosc) / 0.04
+    elif Waluta == &#34;mxn&#34; or Waluta == &#34;MXN&#34;:
+        wynik = int(Ilosc) / 0.20               
+    else:
+        return &#34;Error&#34;
+    return round(wynik,2)</code></pre>
 </details>
 </dd>
 </dl>
@@ -96,12 +159,12 @@ if __name__ == &#34;__main__&#34;:
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="Rock_paper" href="index.html">Rock_paper</a></code></li>
+<li><code><a title="Waluty" href="index.html">Waluty</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="Rock_paper.main.main" href="#Rock_paper.main.main">main</a></code></li>
+<li><code><a title="Waluty.main.Przeliczwaluty" href="#Waluty.main.Przeliczwaluty">Przeliczwaluty</a></code></li>
 </ul>
 </li>
 </ul>

@@ -31,15 +31,15 @@ import os
 import random
 
 def hash_passwd(passwd, n=32):
-    &#34;&#34;&#34; Funkcja szyfrująca hasło
+    &#34;&#34;&#34; Funkcja szyfrująca hasło.
 
-        Parameters:
-            passwd String: Hasło
-            n int: Długość szyfru
+        Args:
+            passwd (str): Hasło.
+            n (int): Długość szyfru.
 
         Returns:
-            _salt
-            _hash
+            str: _salt.
+            str: _hash.
     &#34;&#34;&#34;
     _salt = os.urandom(n)
     _hash = hashlib.pbkdf2_hmac(&#34;sha256&#34;, passwd.encode(&#34;utf-8&#34;), _salt, 100000)
@@ -57,27 +57,35 @@ def hash_passwd(passwd, n=32):
 <span>def <span class="ident">hash_passwd</span></span>(<span>passwd, n=32)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Funkcja szyfrująca hasło</p>
-<h2 id="parameters">Parameters</h2>
-<p>passwd String: Hasło
-n int: Długość szyfru</p>
+<div class="desc"><p>Funkcja szyfrująca hasło.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>passwd</code></strong> :&ensp;<code>str</code></dt>
+<dd>Hasło.</dd>
+<dt><strong><code>n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Długość szyfru.</dd>
+</dl>
 <h2 id="returns">Returns</h2>
-<p>_salt
-_hash</p></div>
+<dl>
+<dt><code>str</code></dt>
+<dd>_salt.</dd>
+<dt><code>str</code></dt>
+<dd>_hash.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def hash_passwd(passwd, n=32):
-    &#34;&#34;&#34; Funkcja szyfrująca hasło
+    &#34;&#34;&#34; Funkcja szyfrująca hasło.
 
-        Parameters:
-            passwd String: Hasło
-            n int: Długość szyfru
+        Args:
+            passwd (str): Hasło.
+            n (int): Długość szyfru.
 
         Returns:
-            _salt
-            _hash
+            str: _salt.
+            str: _hash.
     &#34;&#34;&#34;
     _salt = os.urandom(n)
     _hash = hashlib.pbkdf2_hmac(&#34;sha256&#34;, passwd.encode(&#34;utf-8&#34;), _salt, 100000)
