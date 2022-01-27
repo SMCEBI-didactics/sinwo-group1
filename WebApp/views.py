@@ -60,13 +60,23 @@ def rock_paper():
 
 @app.route("/tic_tac", methods=["GET", "POST"])
 def tic_tac():
-    cookie = request.cookies.get("game_board")
-    var = request.form
-    t, msg = play_game(cookie, var)
-    resp = make_response(render_template("tic_tac.html", t=t, msg=msg))
-    c = ",".join(map(str, t.board))
-    resp.set_cookie("game_board", c)
-    return resp
+    if request.method == "POST":
+        cookie = request.cookies.get("game_board")
+        var = request.form
+        t, msg = play_game(cookie, var)
+        resp = make_response(render_template("tic_tac.html", t=t, msg=msg))
+        c = ",".join(map(str, t.board))
+        resp.set_cookie("game_board", c)
+        return resp
+    else:
+        cookie = request.cookies.get("game_board")
+        var = request.form.to_dict()
+        var['reset'] = ''
+        t, msg = (play_game(cookie, var))
+        resp = make_response(render_template("tic_tac.html", t=t, msg=msg))
+        c = ",".join(map(str, t.board))
+        resp.set_cookie("game_board", c)
+        return resp
 
 
 #######################

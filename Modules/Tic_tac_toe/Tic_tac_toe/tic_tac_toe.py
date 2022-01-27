@@ -9,15 +9,17 @@ class runTic(TwoPlayerGame):
         7 8 9
 
         Attributes:
-            players : Informacje o graczach
-            board list: deklaracja planszy
-            current_player int: informacja o tym, który gracz zaczyna
+            players: Informacje o graczach.
+            board list: deklaracja planszy.
+            current_player int: informacja o tym, który gracz zaczyna.
 
     """
 
     def __init__(self, players):
         self.players = players
         self.board = [0 for i in range(9)]
+        print(type(players))
+        print(type(self.board))
         self.current_player = 1 
 
     def possible_moves(self):
@@ -33,10 +35,10 @@ class runTic(TwoPlayerGame):
         return [i + 1 for i, e in enumerate(self.board) if e == 0]
 
     def make_move(self, move):
-        """ Funkcja odpowiadająca za poruszanie się
+        """ Funkcja odpowiadająca za poruszanie się.
 
             Parameters:
-                move int: Wybór ruchu
+                move int: Wybór ruchu.
 
             Returns:
                 None
@@ -44,15 +46,16 @@ class runTic(TwoPlayerGame):
         """
         self.board[int(move) - 1] = self.current_player
 
+    # Zmienna klasy trzymająca linie, które oznaczają wygraną
     WIN_LINES = [
         [1, 2, 3],
         [4, 5, 6],
-        [7, 8, 9],  # horiz.
+        [7, 8, 9],
         [1, 4, 7],
         [2, 5, 8],
-        [3, 6, 9],  # vertical
+        [3, 6, 9],
         [1, 5, 9],
-        [3, 5, 7],  # diagonal
+        [3, 5, 7],
     ]
 
     def lose(self, who=None):
@@ -62,7 +65,7 @@ class runTic(TwoPlayerGame):
                 who int: Gracz
 
             Returns:
-                any(wins)
+                boolean
         """
         if who is None:
             who = self.opponent_index
@@ -78,7 +81,11 @@ class runTic(TwoPlayerGame):
                 None
 
             Returns:
-
+                String
+                or
+                dict
+                or
+                boolean
         """
         return (
             (self.possible_moves() == [])
@@ -106,12 +113,26 @@ class runTic(TwoPlayerGame):
         )
 
     def spot_string(self, i, j):
-        """ Funkcja 
+        """ Funkcja aktualizująca planszę.
+
+            Parameters:
+                i int: Wiersze planszy.
+                j int: Kolumny planszy.
+
+            Returns:
+                String.
 
         """
         return ["_", "O", "X"][self.board[3 * j + i]]
 
     def scoring(self):
+        """ Funkcja odpowiedzialna za zwracanie wyniku.
+
+            Parameters:
+                None
+            Returns:
+                int
+        """
         opp_won = self.lose()
         i_won = self.lose(who=self.current_player)
         if opp_won and not i_won:
@@ -127,11 +148,11 @@ class runTic(TwoPlayerGame):
                 None
 
             Returns:
-                String: Zwycięzca.
+                String: Zwraca wygranego.
         """
         if self.lose(who=2):
-            return "AI Wins"
-        return "Tie"
+            return "AI Wygrywa"
+        return "Remis"
 
 ai = Negamax(6)
 
@@ -139,11 +160,11 @@ def play_game(game_board, var):
     """ Funkcja obsługująca grę w kółko i krzyżyk.
 
         Parameters:
-            game_board String: Plansza.
-            var String: Wybór.
+            game_board String: Aktualna plansza.
+            var ImmutableMultiDict class Object: Dokonany wybór.
 
         Returns:
-            ttt String: Wykonany ruch.
+            ttt runTic class Object: Obiekt klasy runTic.
             msg String: Wiadomość dotycząca ruchu/wyniku gry.
     
     """
@@ -161,6 +182,5 @@ def play_game(game_board, var):
     if ttt.is_over():
         msg = ttt.winner()
     else:
-        msg = "play move"
-
+        msg = "Wykonaj ruch"
     return ttt, msg

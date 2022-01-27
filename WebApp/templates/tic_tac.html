@@ -2,16 +2,17 @@
 {% block title %}Kolko i krzyżyk{% endblock %}
 
 {% block body %}
-<h1>Tic Tac Toe</h1>
+<h1>Kółko i krzyżyk</h1>
     <h2>{{msg}}</h2>
     <form action="" method="POST">
       <table>
+
         {% for j in range(0, 3) %}
         <tr>
           {% for i in range(0, 3) %}
           <td>
             <button type="submit" name="choice" value="{{j*3+i+1}}"
-             {{"disabled" if t.spot_string(i, j)!="_"}}>
+             {{"disabled" if (t.spot_string(i, j)!="_" or msg=="AI Wygrywa")}}>
               {{t.spot_string(i, j)}}
             </button>
           </td>
