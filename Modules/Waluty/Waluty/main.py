@@ -1,16 +1,15 @@
 import click
 
 def Przeliczwaluty(Ilosc,Waluta):
-    """
-    Funkcja przelicza wybraną walutę z PLN
+    """ Funkcja przelicza wybraną walutę z PLN.  
+        W tej funkcji podaję się liczbę a potem w zależności od wyboru waluty przelicza na nią.
 
-    W tej funkcji podaję się liczbę a potem w zależności od wyboru waluty przelicza na nią
+        Args:
+            Ilosc (int): Ile PLN.
+            Waluta (str): Rodzaj waluty.
 
-    Parameters
-    Ilosc : int
-        Ile PLN
-    Waluta : str
-        Rodzaj waluty
+        Returns:
+            float: Kwota po przeliczeniu.
     """
     wynik= None
     if Waluta =="eur" or Waluta =="EUR":
@@ -39,6 +38,15 @@ def Przeliczwaluty(Ilosc,Waluta):
 @click.option("--Ilosc", type=float, prompt="Podaj liczbę")
 @click.option("--Waluta", type=str, prompt="Jaka waluta")
 def main(Ilosc, Waluta):
+    """ Funkcja wywołuje funkcję Przeliczwaluty
+    
+        Args:
+            Ilosc (int): Ile PLN.
+            Waluta (str): Rodzaj waluty.
+
+        Returns:
+            float: Kwota po przeliczeniu.
+    """
 
     return Przeliczwaluty(Ilosc,Waluta)
 
