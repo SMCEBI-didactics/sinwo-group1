@@ -7,6 +7,7 @@ from Calculator.main import compute
 from Identity.main import gen_identity
 from Rock_paper.main import runRock
 from Tic_tac_toe.main import play_game
+from Waluty.main import Przeliczwaluty
 
 """
 """
@@ -77,6 +78,20 @@ def tic_tac():
         c = ",".join(map(str, t.board))
         resp.set_cookie("game_board", c)
         return resp
+
+@app.route("/Przeliczwaluty", methods=["GET","POST"])
+def Przeliczwalute(): 
+    """ 
+    Funkcja przelicza wybraną walutę na PLN
+    """
+    status= "Ile pieniędzy"
+    if request.method == "POST":
+        Waluta = request.form["Waluty"]
+        Ilosc = request.form["Ilosc"]
+        wynik = Przeliczwaluty(float(Ilosc),Waluta)
+        status=f"Wynik = {wynik}"
+        print("Wynik = ",wynik)
+    return render_template("waluty.html",status = status)
 
 
 #######################
