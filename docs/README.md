@@ -3,15 +3,14 @@
 
 ### Moduł Verify:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Verify/)
 
+### Moduł Dodaj:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Dodaj/)
 
-### Moduł Dodaj:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Verify/)
+### Moduł Waluty:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Waluty/)
 
-### Moduł Waluty:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Verify/)
+### Moduł Calculator:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Calculator/)
 
-### Moduł Calculator:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Verify/)
+### Moduł Identity:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Identity/)
 
-### Moduł Identity:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Verify/)
+### Moduł Rock_paper:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Rock_paper/)
 
-### Moduł Rock_paper:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Verify/)
-
-### Moduł Tic_tac_toe:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Verify/)
+### Moduł Tic_tac_toe:  [Click Here!](https://smcebi-didactics.github.io/sinwo-group1/Tic_tac_toe/)
