@@ -1,4 +1,3 @@
-import re
 from sqlalchemy import TEXT
 from WebApp import app
 from WebApp.models import *

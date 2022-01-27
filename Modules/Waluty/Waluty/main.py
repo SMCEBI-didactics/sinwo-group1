@@ -2,12 +2,15 @@ import click
 
 def Przeliczwaluty(Ilosc,Waluta):
     """
-    Funkcja przelicza wybraną walutę na PLN
+    Funkcja przelicza wybraną walutę z PLN
 
-    Attributes:
-        ilosc : Ile pieniędzy
-        waluta :  Wybór waluty
+    W tej funkcji podaję się liczbę a potem w zależności od wyboru waluty przelicza na nią
 
+    Parameters
+    Ilosc : int
+        Ile PLN
+    Waluta : str
+        Rodzaj waluty
     """
     wynik= None
     if Waluta =="eur" or Waluta =="EUR":
@@ -29,15 +32,15 @@ def Przeliczwaluty(Ilosc,Waluta):
     elif Waluta == "mxn" or Waluta == "MXN":
         wynik = int(Ilosc) / 0.20               
     else:
-        print("Error: Sproboj jeszcze raz.")
-    return wynik
+        return "Error"
+    return round(wynik,2)
+
 @click.command()
 @click.option("--Ilosc", type=float, prompt="Podaj liczbę")
 @click.option("--Waluta", type=str, prompt="Jaka waluta")
 def main(Ilosc, Waluta):
-    wynik = Przeliczwaluty(Ilosc, Waluta)
-    print(f"Wynik: {Ilosc}/{Waluta}={wynik}")
-    return None
+
+    return Przeliczwaluty(Ilosc,Waluta)
 
 if __name__ == "__main__":
     main()

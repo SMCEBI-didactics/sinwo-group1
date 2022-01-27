@@ -1,1 +1,1 @@
-## Moduł Dodaj
+## Moduł Przelicz

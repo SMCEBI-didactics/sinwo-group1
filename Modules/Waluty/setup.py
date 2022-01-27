@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="Kantor",
+    name="Waluty",
     description="Wymiana na inne waluty",
     version="v1.0",
     author="Bartłomiej Kaim",
@@ -10,7 +10,7 @@ setup(
     install_requires=["Click"],
     packages=['Waluty'],
     entry_points={
-        'console_scripts' : ['Przeliczwaluty = Przeliczwaluty.main:main']
+        'console_scripts' : ['waluty = Waluty.main:main']
     }
 )
 
