@@ -2,7 +2,19 @@
 """
 
 def compute(address, mask):
-    """
+    """ Funkcja przeliczająca adres IP.
+
+        Args:
+            address (str): Adres IP.
+            mask (str): Maska IP.
+
+        Returns:
+            str: Binary address name.
+            str: Klasa.
+            str: Adres rozgłoszeniowy.
+            str: Zakres górny.
+            str: Zakres dolny.
+
     """
     address = address.split(".")
     mask = mask.split(".")
@@ -64,7 +76,6 @@ def compute(address, mask):
         
     range_down = ".".join(binary_address_name.split(".")[0:3]) + "." + str(int(binary_address_name.split(".")[3])+1)
     range_up = ".".join(broadcast_address.split(".")[0:3]) + "." + str(int(broadcast_address.split(".")[3])-1) 
-
     return binary_address_name, klasa, broadcast_address, range_up, range_down
     
 

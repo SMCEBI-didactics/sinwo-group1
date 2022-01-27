@@ -43,14 +43,6 @@ def reading():
 
 @app.route("/rock_paper", methods=["GET","POST"])
 def rock_paper():
-	""" Funkcja obslugujaca gre w kamien, papier, nozyce
-
-	    Parameters:
-		None
-
-	    Returns:
-		html file.
-	"""
 	if request.method == "POST":
 		var = request.form.get("nm")
 		return runRock(var)

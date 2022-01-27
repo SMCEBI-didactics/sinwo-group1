@@ -3,11 +3,11 @@ from Rock_paper import runRock
 def main(x):
     """ Funkcja zwracająca funkcję obsługującą grę "Kamień, papier, nożyce".
     
-        Parameters:
-            x int: Wybór gracza.
+        Args:
+            x (int): Wybór gracza.
 
         Returns:
-            String
+            str: Rezultat gry.
 
     """
     return runRock(x)

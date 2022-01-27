@@ -3,15 +3,15 @@ from easyAI import TwoPlayerGame, Human_Player, AI_Player, Negamax
 class runTic(TwoPlayerGame):
     """ Klasa odpowiadająca za gre kółko i krzyżyk.
 
-        Numeracja pozycji:
-        1 2 3
-        4 5 6
-        7 8 9
+        Numeracja pozycji:  
+        1 2 3  
+        4 5 6  
+        7 8 9  
 
         Attributes:
-            players: Informacje o graczach.
-            board list: deklaracja planszy.
-            current_player int: informacja o tym, który gracz zaczyna.
+            players (list): Informacje o graczach.
+            board (list): deklaracja planszy.
+            current_player (int): informacja o tym, który gracz zaczyna.
 
     """
 
@@ -25,11 +25,8 @@ class runTic(TwoPlayerGame):
     def possible_moves(self):
         """ Funkcja sprawdzająca jakie ruchy są dostępne.
 
-            Parameters:
-                None
-
             Returns:
-                list: lista dostępnych ruchów
+                list: lista dostępnych ruchów.
         
         """
         return [i + 1 for i, e in enumerate(self.board) if e == 0]
@@ -37,11 +34,8 @@ class runTic(TwoPlayerGame):
     def make_move(self, move):
         """ Funkcja odpowiadająca za poruszanie się.
 
-            Parameters:
-                move int: Wybór ruchu.
-
-            Returns:
-                None
+            Args:
+                move (int): Wybór ruchu.
         
         """
         self.board[int(move) - 1] = self.current_player
@@ -61,11 +55,11 @@ class runTic(TwoPlayerGame):
     def lose(self, who=None):
         """ Funkcja sprawdzająca, czy ktoś wygrał.
 
-            Parameters:
-                who int: Gracz
+            Args:
+                who (int): Gracz.
 
             Returns:
-                boolean
+                bool: Zwraca True lub False.
         """
         if who is None:
             who = self.opponent_index
@@ -77,15 +71,8 @@ class runTic(TwoPlayerGame):
     def is_over(self):
         """ Funkcja sprawdzająca, czy gra dobiegła końca.
 
-            Parameters:
-                None
-
             Returns:
-                String
-                or
-                dict
-                or
-                boolean
+                bool: Zwraca True lub False.
         """
         return (
             (self.possible_moves() == [])
@@ -95,12 +82,6 @@ class runTic(TwoPlayerGame):
 
     def show(self):
         """ Funkcja printująca planszę.
-
-            Parameters:
-                None
-
-            Returns: 
-                None
         """
         print(
             "\n"
@@ -113,14 +94,14 @@ class runTic(TwoPlayerGame):
         )
 
     def spot_string(self, i, j):
-        """ Funkcja aktualizująca planszę.
+        """ Funkcja sprawdzająca planszę.
 
-            Parameters:
-                i int: Wiersze planszy.
-                j int: Kolumny planszy.
+            Args:
+                i (int): Wiersze planszy.
+                j (int): Kolumny planszy.
 
             Returns:
-                String.
+                str: zwraca coś tam.
 
         """
         return ["_", "O", "X"][self.board[3 * j + i]]
@@ -128,10 +109,8 @@ class runTic(TwoPlayerGame):
     def scoring(self):
         """ Funkcja odpowiedzialna za zwracanie wyniku.
 
-            Parameters:
-                None
             Returns:
-                int
+                int: zwraca -100 lub 0 lub 100
         """
         opp_won = self.lose()
         i_won = self.lose(who=self.current_player)
@@ -143,9 +122,6 @@ class runTic(TwoPlayerGame):
 
     def winner(self):
         """ Funkcja odpowiedzialna za zwracanie wygranego.
-
-            Parameters:
-                None
 
             Returns:
                 String: Zwraca wygranego.
@@ -159,13 +135,13 @@ ai = Negamax(6)
 def play_game(game_board, var):
     """ Funkcja obsługująca grę w kółko i krzyżyk.
 
-        Parameters:
-            game_board String: Aktualna plansza.
-            var ImmutableMultiDict class Object: Dokonany wybór.
+        Args:
+            game_board (str): Aktualna plansza.
+            var (ImmutableMultiDict): Dokonany wybór.
 
         Returns:
-            ttt runTic class Object: Obiekt klasy runTic.
-            msg String: Wiadomość dotycząca ruchu/wyniku gry.
+            runTic: Obiekt klasy runTic.
+            str: Wiadomość dotycząca ruchu/wyniku gry.
     
     """
     ttt = runTic([Human_Player(), AI_Player(ai)])
