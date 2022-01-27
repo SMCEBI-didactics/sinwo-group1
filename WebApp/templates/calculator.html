@@ -1,12 +1,31 @@
 <h1>Kalkulator IP</h1>
+
 <form action="/calculator" method="POST">
-    <p>Adres IP komputera: <input type="text" name="address" /></p>
-    <p>Maska sieci: <input type="text" name="mask" /></p>
-    <p><input type="submit" name="submit" /></p>
+    <div class="form-group">
+        <label for="ip">Adres IP:</label>
+        <input type="text" name="address" id="address"/>
+    </div>
+    <p></p>
+    <div class="form-group">
+        <label for="mask">Maska:</label>
+        <input type="text" name="mask" id="mask"/>
+    </div>
+    <p></p>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 {% if address %}
-    <p><b>Nazwa sieci:</b> {{address}}</p>
-    <p><b>Klasa adresu:</b> {{klasa}}</p>
-    <p><b>Adres rozgłoszeniowy:</b> {{broadcast}}</p>
-    <p><b>Zakres hostów:</b> {{range_down}} - {{range_up}}</p>
+    <div class="row justify-content-center mt-5">
+        <div class="col-6 home-box p-5" style="border:2px solid #ccc">
+            <ul class="list-group">
+                <li class="list-group-item"><b>Nazwa sieci:</b> {{address}}</li>
+                <li class="list-group-item"><b>Klasa adresu:</b> {{klasa}}</li>
+                <li class="list-group-item"><b>Adres rozgłoszeniowy:</b> {{broadcast}}</li>
+                <li class="list-group-item"><b>Zakres hostów:</b> {{range_down}} - {{range_up}}</li>
+            </ul>
+        </div>
+      </div>
+    
 {% endif %}
+
+
+
