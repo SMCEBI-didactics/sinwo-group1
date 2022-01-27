@@ -4,11 +4,11 @@ import random
 def runRock(x): 
     """ Funkcja obsługująca grę w "Kamień, papier, nożyce".
 
-        Parameters:
-            x int: Wybór gracza.
+        Args:
+            x (int): Wybór gracza.
 
         Returns:
-            String
+            str: Rezultat gry.
     """
     var = int(x)
     en = random.randint(1,3)

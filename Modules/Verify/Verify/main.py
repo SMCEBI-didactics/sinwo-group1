@@ -6,12 +6,8 @@ import click
 def main(passwd):
     """ Funkcja printująca hasło po zaszyfrowaniu.
 
-        Parameters:
-            passwd String: Hasło
-
-        returns:
-            None
-
+        Args:
+            passwd (str): Hasło.
     """
     _salt, _hash = hash_passwd(passwd)
     print(f"salt={_salt}\nhash={_hash}")

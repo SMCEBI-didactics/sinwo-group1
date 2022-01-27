@@ -31,15 +31,15 @@
 class runTic(TwoPlayerGame):
     &#34;&#34;&#34; Klasa odpowiadająca za gre kółko i krzyżyk.
 
-        Numeracja pozycji:
-        1 2 3
-        4 5 6
-        7 8 9
+        Numeracja pozycji:  
+        1 2 3  
+        4 5 6  
+        7 8 9  
 
         Attributes:
-            players: Informacje o graczach.
-            board list: deklaracja planszy.
-            current_player int: informacja o tym, który gracz zaczyna.
+            players (list): Informacje o graczach.
+            board (list): deklaracja planszy.
+            current_player (int): informacja o tym, który gracz zaczyna.
 
     &#34;&#34;&#34;
 
@@ -53,11 +53,8 @@ class runTic(TwoPlayerGame):
     def possible_moves(self):
         &#34;&#34;&#34; Funkcja sprawdzająca jakie ruchy są dostępne.
 
-            Parameters:
-                None
-
             Returns:
-                list: lista dostępnych ruchów
+                list: lista dostępnych ruchów.
         
         &#34;&#34;&#34;
         return [i + 1 for i, e in enumerate(self.board) if e == 0]
@@ -65,11 +62,8 @@ class runTic(TwoPlayerGame):
     def make_move(self, move):
         &#34;&#34;&#34; Funkcja odpowiadająca za poruszanie się.
 
-            Parameters:
-                move int: Wybór ruchu.
-
-            Returns:
-                None
+            Args:
+                move (int): Wybór ruchu.
         
         &#34;&#34;&#34;
         self.board[int(move) - 1] = self.current_player
@@ -89,11 +83,11 @@ class runTic(TwoPlayerGame):
     def lose(self, who=None):
         &#34;&#34;&#34; Funkcja sprawdzająca, czy ktoś wygrał.
 
-            Parameters:
-                who int: Gracz
+            Args:
+                who (int): Gracz.
 
             Returns:
-                boolean
+                bool: Zwraca True lub False.
         &#34;&#34;&#34;
         if who is None:
             who = self.opponent_index
@@ -105,15 +99,8 @@ class runTic(TwoPlayerGame):
     def is_over(self):
         &#34;&#34;&#34; Funkcja sprawdzająca, czy gra dobiegła końca.
 
-            Parameters:
-                None
-
             Returns:
-                String
-                or
-                dict
-                or
-                boolean
+                bool: Zwraca True lub False.
         &#34;&#34;&#34;
         return (
             (self.possible_moves() == [])
@@ -123,12 +110,6 @@ class runTic(TwoPlayerGame):
 
     def show(self):
         &#34;&#34;&#34; Funkcja printująca planszę.
-
-            Parameters:
-                None
-
-            Returns: 
-                None
         &#34;&#34;&#34;
         print(
             &#34;\n&#34;
@@ -141,14 +122,14 @@ class runTic(TwoPlayerGame):
         )
 
     def spot_string(self, i, j):
-        &#34;&#34;&#34; Funkcja aktualizująca planszę.
+        &#34;&#34;&#34; Funkcja sprawdzająca planszę.
 
-            Parameters:
-                i int: Wiersze planszy.
-                j int: Kolumny planszy.
+            Args:
+                i (int): Wiersze planszy.
+                j (int): Kolumny planszy.
 
             Returns:
-                String.
+                str: zwraca coś tam.
 
         &#34;&#34;&#34;
         return [&#34;_&#34;, &#34;O&#34;, &#34;X&#34;][self.board[3 * j + i]]
@@ -156,10 +137,8 @@ class runTic(TwoPlayerGame):
     def scoring(self):
         &#34;&#34;&#34; Funkcja odpowiedzialna za zwracanie wyniku.
 
-            Parameters:
-                None
             Returns:
-                int
+                int: zwraca -100 lub 0 lub 100
         &#34;&#34;&#34;
         opp_won = self.lose()
         i_won = self.lose(who=self.current_player)
@@ -171,9 +150,6 @@ class runTic(TwoPlayerGame):
 
     def winner(self):
         &#34;&#34;&#34; Funkcja odpowiedzialna za zwracanie wygranego.
-
-            Parameters:
-                None
 
             Returns:
                 String: Zwraca wygranego.
@@ -187,13 +163,13 @@ ai = Negamax(6)
 def play_game(game_board, var):
     &#34;&#34;&#34; Funkcja obsługująca grę w kółko i krzyżyk.
 
-        Parameters:
-            game_board String: Aktualna plansza.
-            var ImmutableMultiDict class Object: Dokonany wybór.
+        Args:
+            game_board (str): Aktualna plansza.
+            var (ImmutableMultiDict): Dokonany wybór.
 
         Returns:
-            ttt runTic class Object: Obiekt klasy runTic.
-            msg String: Wiadomość dotycząca ruchu/wyniku gry.
+            runTic: Obiekt klasy runTic.
+            str: Wiadomość dotycząca ruchu/wyniku gry.
     
     &#34;&#34;&#34;
     ttt = runTic([Human_Player(), AI_Player(ai)])
@@ -226,14 +202,18 @@ def play_game(game_board, var):
 </code></dt>
 <dd>
 <div class="desc"><p>Funkcja obsługująca grę w kółko i krzyżyk.</p>
-<h2 id="parameters">Parameters</h2>
-<p>game_board String: Aktualna plansza.
-var ImmutableMultiDict class Object: Dokonany wybór.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>game_board</code></strong> :&ensp;<code>str</code></dt>
+<dd>Aktualna plansza.</dd>
+<dt><strong><code>var</code></strong> :&ensp;<code>ImmutableMultiDict</code></dt>
+<dd>Dokonany wybór.</dd>
+</dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>ttt <a title="Tic_tac_toe.tic_tac_toe.runTic" href="#Tic_tac_toe.tic_tac_toe.runTic">runTic</a> class Object</code></dt>
+<dt><code><a title="Tic_tac_toe.tic_tac_toe.runTic" href="#Tic_tac_toe.tic_tac_toe.runTic">runTic</a></code></dt>
 <dd>Obiekt klasy runTic.</dd>
-<dt><code>msg String</code></dt>
+<dt><code>str</code></dt>
 <dd>Wiadomość dotycząca ruchu/wyniku gry.</dd>
 </dl></div>
 <details class="source">
@@ -243,13 +223,13 @@ var ImmutableMultiDict class Object: Dokonany wybór.</p>
 <pre><code class="python">def play_game(game_board, var):
     &#34;&#34;&#34; Funkcja obsługująca grę w kółko i krzyżyk.
 
-        Parameters:
-            game_board String: Aktualna plansza.
-            var ImmutableMultiDict class Object: Dokonany wybór.
+        Args:
+            game_board (str): Aktualna plansza.
+            var (ImmutableMultiDict): Dokonany wybór.
 
         Returns:
-            ttt runTic class Object: Obiekt klasy runTic.
-            msg String: Wiadomość dotycząca ruchu/wyniku gry.
+            runTic: Obiekt klasy runTic.
+            str: Wiadomość dotycząca ruchu/wyniku gry.
     
     &#34;&#34;&#34;
     ttt = runTic([Human_Player(), AI_Player(ai)])
@@ -281,17 +261,20 @@ var ImmutableMultiDict class Object: Dokonany wybór.</p>
 </code></dt>
 <dd>
 <div class="desc"><p>Klasa odpowiadająca za gre kółko i krzyżyk.</p>
-<p>Numeracja pozycji:
-1 2 3
-4 5 6
-7 8 9</p>
+<p>Numeracja pozycji:<br>
+1 2 3<br>
+4 5 6<br>
+7 8 9
+</p>
 <h2 id="attributes">Attributes</h2>
 <dl>
-<dt><strong><code>players</code></strong></dt>
+<dt><strong><code>players</code></strong> :&ensp;<code>list</code></dt>
 <dd>Informacje o graczach.</dd>
-</dl>
-<p>board list: deklaracja planszy.
-current_player int: informacja o tym, który gracz zaczyna.</p></div>
+<dt><strong><code>board</code></strong> :&ensp;<code>list</code></dt>
+<dd>deklaracja planszy.</dd>
+<dt><strong><code>current_player</code></strong> :&ensp;<code>int</code></dt>
+<dd>informacja o tym, który gracz zaczyna.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -299,15 +282,15 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
 <pre><code class="python">class runTic(TwoPlayerGame):
     &#34;&#34;&#34; Klasa odpowiadająca za gre kółko i krzyżyk.
 
-        Numeracja pozycji:
-        1 2 3
-        4 5 6
-        7 8 9
+        Numeracja pozycji:  
+        1 2 3  
+        4 5 6  
+        7 8 9  
 
         Attributes:
-            players: Informacje o graczach.
-            board list: deklaracja planszy.
-            current_player int: informacja o tym, który gracz zaczyna.
+            players (list): Informacje o graczach.
+            board (list): deklaracja planszy.
+            current_player (int): informacja o tym, który gracz zaczyna.
 
     &#34;&#34;&#34;
 
@@ -321,11 +304,8 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
     def possible_moves(self):
         &#34;&#34;&#34; Funkcja sprawdzająca jakie ruchy są dostępne.
 
-            Parameters:
-                None
-
             Returns:
-                list: lista dostępnych ruchów
+                list: lista dostępnych ruchów.
         
         &#34;&#34;&#34;
         return [i + 1 for i, e in enumerate(self.board) if e == 0]
@@ -333,11 +313,8 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
     def make_move(self, move):
         &#34;&#34;&#34; Funkcja odpowiadająca za poruszanie się.
 
-            Parameters:
-                move int: Wybór ruchu.
-
-            Returns:
-                None
+            Args:
+                move (int): Wybór ruchu.
         
         &#34;&#34;&#34;
         self.board[int(move) - 1] = self.current_player
@@ -357,11 +334,11 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
     def lose(self, who=None):
         &#34;&#34;&#34; Funkcja sprawdzająca, czy ktoś wygrał.
 
-            Parameters:
-                who int: Gracz
+            Args:
+                who (int): Gracz.
 
             Returns:
-                boolean
+                bool: Zwraca True lub False.
         &#34;&#34;&#34;
         if who is None:
             who = self.opponent_index
@@ -373,15 +350,8 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
     def is_over(self):
         &#34;&#34;&#34; Funkcja sprawdzająca, czy gra dobiegła końca.
 
-            Parameters:
-                None
-
             Returns:
-                String
-                or
-                dict
-                or
-                boolean
+                bool: Zwraca True lub False.
         &#34;&#34;&#34;
         return (
             (self.possible_moves() == [])
@@ -391,12 +361,6 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
 
     def show(self):
         &#34;&#34;&#34; Funkcja printująca planszę.
-
-            Parameters:
-                None
-
-            Returns: 
-                None
         &#34;&#34;&#34;
         print(
             &#34;\n&#34;
@@ -409,14 +373,14 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
         )
 
     def spot_string(self, i, j):
-        &#34;&#34;&#34; Funkcja aktualizująca planszę.
+        &#34;&#34;&#34; Funkcja sprawdzająca planszę.
 
-            Parameters:
-                i int: Wiersze planszy.
-                j int: Kolumny planszy.
+            Args:
+                i (int): Wiersze planszy.
+                j (int): Kolumny planszy.
 
             Returns:
-                String.
+                str: zwraca coś tam.
 
         &#34;&#34;&#34;
         return [&#34;_&#34;, &#34;O&#34;, &#34;X&#34;][self.board[3 * j + i]]
@@ -424,10 +388,8 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
     def scoring(self):
         &#34;&#34;&#34; Funkcja odpowiedzialna za zwracanie wyniku.
 
-            Parameters:
-                None
             Returns:
-                int
+                int: zwraca -100 lub 0 lub 100
         &#34;&#34;&#34;
         opp_won = self.lose()
         i_won = self.lose(who=self.current_player)
@@ -439,9 +401,6 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
 
     def winner(self):
         &#34;&#34;&#34; Funkcja odpowiedzialna za zwracanie wygranego.
-
-            Parameters:
-                None
 
             Returns:
                 String: Zwraca wygranego.
@@ -469,14 +428,11 @@ current_player int: informacja o tym, który gracz zaczyna.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Funkcja sprawdzająca, czy gra dobiegła końca.</p>
-<h2 id="parameters">Parameters</h2>
-<p>None</p>
 <h2 id="returns">Returns</h2>
-<p>String
-or
-dict
-or
-boolean</p></div>
+<dl>
+<dt><code>bool</code></dt>
+<dd>Zwraca True lub False.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -484,15 +440,8 @@ boolean</p></div>
 <pre><code class="python">def is_over(self):
     &#34;&#34;&#34; Funkcja sprawdzająca, czy gra dobiegła końca.
 
-        Parameters:
-            None
-
         Returns:
-            String
-            or
-            dict
-            or
-            boolean
+            bool: Zwraca True lub False.
     &#34;&#34;&#34;
     return (
         (self.possible_moves() == [])
@@ -506,10 +455,16 @@ boolean</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Funkcja sprawdzająca, czy ktoś wygrał.</p>
-<h2 id="parameters">Parameters</h2>
-<p>who int: Gracz</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>who</code></strong> :&ensp;<code>int</code></dt>
+<dd>Gracz.</dd>
+</dl>
 <h2 id="returns">Returns</h2>
-<p>boolean</p></div>
+<dl>
+<dt><code>bool</code></dt>
+<dd>Zwraca True lub False.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -517,11 +472,11 @@ boolean</p></div>
 <pre><code class="python">def lose(self, who=None):
     &#34;&#34;&#34; Funkcja sprawdzająca, czy ktoś wygrał.
 
-        Parameters:
-            who int: Gracz
+        Args:
+            who (int): Gracz.
 
         Returns:
-            boolean
+            bool: Zwraca True lub False.
     &#34;&#34;&#34;
     if who is None:
         who = self.opponent_index
@@ -536,10 +491,11 @@ boolean</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Funkcja odpowiadająca za poruszanie się.</p>
-<h2 id="parameters">Parameters</h2>
-<p>move int: Wybór ruchu.</p>
-<h2 id="returns">Returns</h2>
-<p>None</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>move</code></strong> :&ensp;<code>int</code></dt>
+<dd>Wybór ruchu.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -547,11 +503,8 @@ boolean</p></div>
 <pre><code class="python">def make_move(self, move):
     &#34;&#34;&#34; Funkcja odpowiadająca za poruszanie się.
 
-        Parameters:
-            move int: Wybór ruchu.
-
-        Returns:
-            None
+        Args:
+            move (int): Wybór ruchu.
     
     &#34;&#34;&#34;
     self.board[int(move) - 1] = self.current_player</code></pre>
@@ -562,12 +515,10 @@ boolean</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Funkcja sprawdzająca jakie ruchy są dostępne.</p>
-<h2 id="parameters">Parameters</h2>
-<p>None</p>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><code>list</code></dt>
-<dd>lista dostępnych ruchów</dd>
+<dd>lista dostępnych ruchów.</dd>
 </dl></div>
 <details class="source">
 <summary>
@@ -576,11 +527,8 @@ boolean</p></div>
 <pre><code class="python">def possible_moves(self):
     &#34;&#34;&#34; Funkcja sprawdzająca jakie ruchy są dostępne.
 
-        Parameters:
-            None
-
         Returns:
-            list: lista dostępnych ruchów
+            list: lista dostępnych ruchów.
     
     &#34;&#34;&#34;
     return [i + 1 for i, e in enumerate(self.board) if e == 0]</code></pre>
@@ -591,10 +539,11 @@ boolean</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Funkcja odpowiedzialna za zwracanie wyniku.</p>
-<h2 id="parameters">Parameters</h2>
-<p>None</p>
 <h2 id="returns">Returns</h2>
-<p>int</p></div>
+<dl>
+<dt><code>int</code></dt>
+<dd>zwraca -100 lub 0 lub 100</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -602,10 +551,8 @@ boolean</p></div>
 <pre><code class="python">def scoring(self):
     &#34;&#34;&#34; Funkcja odpowiedzialna za zwracanie wyniku.
 
-        Parameters:
-            None
         Returns:
-            int
+            int: zwraca -100 lub 0 lub 100
     &#34;&#34;&#34;
     opp_won = self.lose()
     i_won = self.lose(who=self.current_player)
@@ -620,23 +567,13 @@ boolean</p></div>
 <span>def <span class="ident">show</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Funkcja printująca planszę.</p>
-<h2 id="parameters">Parameters</h2>
-<p>None</p>
-<p>Returns:
-None</p></div>
+<div class="desc"><p>Funkcja printująca planszę.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def show(self):
     &#34;&#34;&#34; Funkcja printująca planszę.
-
-        Parameters:
-            None
-
-        Returns: 
-            None
     &#34;&#34;&#34;
     print(
         &#34;\n&#34;
@@ -653,25 +590,32 @@ None</p></div>
 <span>def <span class="ident">spot_string</span></span>(<span>self, i, j)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Funkcja aktualizująca planszę.</p>
-<h2 id="parameters">Parameters</h2>
-<p>i int: Wiersze planszy.
-j int: Kolumny planszy.</p>
+<div class="desc"><p>Funkcja sprawdzająca planszę.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>i</code></strong> :&ensp;<code>int</code></dt>
+<dd>Wiersze planszy.</dd>
+<dt><strong><code>j</code></strong> :&ensp;<code>int</code></dt>
+<dd>Kolumny planszy.</dd>
+</dl>
 <h2 id="returns">Returns</h2>
-<p>String.</p></div>
+<dl>
+<dt><code>str</code></dt>
+<dd>zwraca coś tam.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def spot_string(self, i, j):
-    &#34;&#34;&#34; Funkcja aktualizująca planszę.
+    &#34;&#34;&#34; Funkcja sprawdzająca planszę.
 
-        Parameters:
-            i int: Wiersze planszy.
-            j int: Kolumny planszy.
+        Args:
+            i (int): Wiersze planszy.
+            j (int): Kolumny planszy.
 
         Returns:
-            String.
+            str: zwraca coś tam.
 
     &#34;&#34;&#34;
     return [&#34;_&#34;, &#34;O&#34;, &#34;X&#34;][self.board[3 * j + i]]</code></pre>
@@ -682,8 +626,6 @@ j int: Kolumny planszy.</p>
 </code></dt>
 <dd>
 <div class="desc"><p>Funkcja odpowiedzialna za zwracanie wygranego.</p>
-<h2 id="parameters">Parameters</h2>
-<p>None</p>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><code>String</code></dt>
@@ -695,9 +637,6 @@ j int: Kolumny planszy.</p>
 </summary>
 <pre><code class="python">def winner(self):
     &#34;&#34;&#34; Funkcja odpowiedzialna za zwracanie wygranego.
-
-        Parameters:
-            None
 
         Returns:
             String: Zwraca wygranego.

@@ -32,11 +32,11 @@
 def runRock(x): 
     &#34;&#34;&#34; Funkcja obsługująca grę w &#34;Kamień, papier, nożyce&#34;.
 
-        Parameters:
-            x int: Wybór gracza.
+        Args:
+            x (int): Wybór gracza.
 
         Returns:
-            String
+            str: Rezultat gry.
     &#34;&#34;&#34;
     var = int(x)
     en = random.randint(1,3)
@@ -76,10 +76,16 @@ def runRock(x):
 </code></dt>
 <dd>
 <div class="desc"><p>Funkcja obsługująca grę w "Kamień, papier, nożyce".</p>
-<h2 id="parameters">Parameters</h2>
-<p>x int: Wybór gracza.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>int</code></dt>
+<dd>Wybór gracza.</dd>
+</dl>
 <h2 id="returns">Returns</h2>
-<p>String</p></div>
+<dl>
+<dt><code>str</code></dt>
+<dd>Rezultat gry.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -87,11 +93,11 @@ def runRock(x):
 <pre><code class="python">def runRock(x): 
     &#34;&#34;&#34; Funkcja obsługująca grę w &#34;Kamień, papier, nożyce&#34;.
 
-        Parameters:
-            x int: Wybór gracza.
+        Args:
+            x (int): Wybór gracza.
 
         Returns:
-            String
+            str: Rezultat gry.
     &#34;&#34;&#34;
     var = int(x)
     en = random.randint(1,3)

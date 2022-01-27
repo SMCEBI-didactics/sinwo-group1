@@ -1,10 +1,10 @@
 import random
 
 def gen_identity():
-    """
-    Generuje losowe dane osobowe
+    """ Generuje losowe dane osobowe.
 
-    :return: Dictionary[string , string, string ,int, int, string, int, string, string, int]
+        Returns:
+            dict: Słownik z wygenerowanymi danymi.
 
     """
     pesel, data_ur = gen_pesel()
@@ -13,10 +13,12 @@ def gen_identity():
     return pesel,data_ur,miejce_zamieszkania,nr_telefonu,plec,kolor_wlosow,kolor_oczu
 
 def gen_traits():
-    """
-    Generuje losowe atrybutu dla osoby
-
-    :return: string, string, string
+    """ Generuje losowe atrybutu dla osoby.
+        
+        Returns:
+            str: Zwraca płeć.
+            str: Zwraca kolor włosów.
+            str: Zwraca kolor oczu.
 
     """
     plec = random.choice(["Mężczyzna","Kobieta"])
@@ -25,10 +27,11 @@ def gen_traits():
     return  plec,kolor_wlosow,kolor_oczu
 
 def gen_place():
-    """
-    Generuje losowe miejsce zamieszkania oraz numer telefonu na jego podstawie
+    """ Generuje losowe miejsce zamieszkania oraz numer telefonu na jego podstawie.
 
-    :return: string,string
+        Returns:
+            str: Zwraca miejsce zamieszkania.
+            str: Zwraca numer telefonu.
     """
     countries =  [
         {
@@ -986,10 +989,11 @@ def gen_place():
     return miejce_zamieszkania,nr_telefonu
 
 def gen_pesel():
-    """
-    Generuje losową datę urodzenia oraz pesel na podstawie wygenerowanej daty
-
-    :return: int, string
+    """ Generuje losową datę urodzenia oraz pesel na podstawie wygenerowanej daty.
+        
+        Returns:
+            int: Zwraca PESEL.
+            str: Zwraca date urodzenia.
     """
     year = random.randint(1900, 2020)
     if year <= 1999:
