@@ -11,13 +11,23 @@ def Przeliczwaluty(Ilosc,Waluta):
     """
     wynik= None
     if Waluta =="eur" or Waluta =="EUR":
-        wynik = int(Ilosc) / 4.2999
+        wynik = int(Ilosc) / 4.57
     elif Waluta == "gbp" or Waluta == "GBP":
-        wynik = int(Ilosc) / 5.0272
+        wynik = int(Ilosc) / 5.48
     elif Waluta == "usd" or Waluta == "USD":
-        wynik = int(Ilosc) / 3.8232
+        wynik = int(Ilosc) / 4.08
     elif Waluta == "aud" or Waluta == "AUD":
-        wynik = int(Ilosc) / 2.6994
+        wynik = int(Ilosc) / 2.90
+    elif Waluta == "chf" or Waluta == "CHF":
+        wynik = int(Ilosc) / 4.3872
+    elif Waluta == "ars" or Waluta == "ARS":
+        wynik = int(Ilosc) / 0.04   
+    elif Waluta == "hrk" or Waluta == "HRK":
+        wynik = int(Ilosc) / 0.61
+    elif Waluta == "jpy" or Waluta == "JPY":
+        wynik = int(Ilosc) / 0.04
+    elif Waluta == "mxn" or Waluta == "MXN":
+        wynik = int(Ilosc) / 0.20               
     else:
         print("Error: Sproboj jeszcze raz.")
     return wynik
