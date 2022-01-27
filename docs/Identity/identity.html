@@ -1,0 +1,2256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Identity.identity API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Identity.identity</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import random
+
+def gen_identity():
+    &#34;&#34;&#34; Generuje losowe dane osobowe.
+
+        Returns:
+            dict: Słownik z wygenerowanymi danymi.
+
+    &#34;&#34;&#34;
+    pesel, data_ur = gen_pesel()
+    miejce_zamieszkania,nr_telefonu = gen_place()
+    plec,kolor_wlosow,kolor_oczu = gen_traits()
+    return pesel,data_ur,miejce_zamieszkania,nr_telefonu,plec,kolor_wlosow,kolor_oczu
+
+def gen_traits():
+    &#34;&#34;&#34; Generuje losowe atrybutu dla osoby.
+        
+        Returns:
+            str: Zwraca płeć.
+            str: Zwraca kolor włosów.
+            str: Zwraca kolor oczu.
+
+    &#34;&#34;&#34;
+    plec = random.choice([&#34;Mężczyzna&#34;,&#34;Kobieta&#34;])
+    kolor_wlosow = random.choice([&#34;Blond&#34;,&#34;Szatyn&#34;,&#34;Rude&#34;,&#34;Czarne&#34;])
+    kolor_oczu = random.choice([&#34;Niebieskie&#34;,&#34;Zielone&#34;,&#34;Brązowe&#34;])
+    return  plec,kolor_wlosow,kolor_oczu
+
+def gen_place():
+    &#34;&#34;&#34; Generuje losowe miejsce zamieszkania oraz numer telefonu na jego podstawie.
+
+        Returns:
+            str: Zwraca miejsce zamieszkania.
+            str: Zwraca numer telefonu.
+    &#34;&#34;&#34;
+    countries =  [
+        {
+        &#34;code&#34;: &#34;+7 840&#34;,
+        &#34;name&#34;: &#34;Abkhazia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+93&#34;,
+        &#34;name&#34;: &#34;Afghanistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+355&#34;,
+        &#34;name&#34;: &#34;Albania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+213&#34;,
+        &#34;name&#34;: &#34;Algeria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 684&#34;,
+        &#34;name&#34;: &#34;American Samoa&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+376&#34;,
+        &#34;name&#34;: &#34;Andorra&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+244&#34;,
+        &#34;name&#34;: &#34;Angola&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 264&#34;,
+        &#34;name&#34;: &#34;Anguilla&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 268&#34;,
+        &#34;name&#34;: &#34;Antigua and Barbuda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+54&#34;,
+        &#34;name&#34;: &#34;Argentina&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+374&#34;,
+        &#34;name&#34;: &#34;Armenia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+297&#34;,
+        &#34;name&#34;: &#34;Aruba&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+247&#34;,
+        &#34;name&#34;: &#34;Ascension&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+61&#34;,
+        &#34;name&#34;: &#34;Australia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+672&#34;,
+        &#34;name&#34;: &#34;Australian External Territories&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+43&#34;,
+        &#34;name&#34;: &#34;Austria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+994&#34;,
+        &#34;name&#34;: &#34;Azerbaijan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 242&#34;,
+        &#34;name&#34;: &#34;Bahamas&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+973&#34;,
+        &#34;name&#34;: &#34;Bahrain&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+880&#34;,
+        &#34;name&#34;: &#34;Bangladesh&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 246&#34;,
+        &#34;name&#34;: &#34;Barbados&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 268&#34;,
+        &#34;name&#34;: &#34;Barbuda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+375&#34;,
+        &#34;name&#34;: &#34;Belarus&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+32&#34;,
+        &#34;name&#34;: &#34;Belgium&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+501&#34;,
+        &#34;name&#34;: &#34;Belize&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+229&#34;,
+        &#34;name&#34;: &#34;Benin&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 441&#34;,
+        &#34;name&#34;: &#34;Bermuda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+975&#34;,
+        &#34;name&#34;: &#34;Bhutan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+591&#34;,
+        &#34;name&#34;: &#34;Bolivia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+387&#34;,
+        &#34;name&#34;: &#34;Bosnia and Herzegovina&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+267&#34;,
+        &#34;name&#34;: &#34;Botswana&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+55&#34;,
+        &#34;name&#34;: &#34;Brazil&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+246&#34;,
+        &#34;name&#34;: &#34;British Indian Ocean Territory&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 284&#34;,
+        &#34;name&#34;: &#34;British Virgin Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+673&#34;,
+        &#34;name&#34;: &#34;Brunei&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+359&#34;,
+        &#34;name&#34;: &#34;Bulgaria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+226&#34;,
+        &#34;name&#34;: &#34;Burkina Faso&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+257&#34;,
+        &#34;name&#34;: &#34;Burundi&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+855&#34;,
+        &#34;name&#34;: &#34;Cambodia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+237&#34;,
+        &#34;name&#34;: &#34;Cameroon&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1&#34;,
+        &#34;name&#34;: &#34;Canada&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+238&#34;,
+        &#34;name&#34;: &#34;Cape Verde&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+ 345&#34;,
+        &#34;name&#34;: &#34;Cayman Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+236&#34;,
+        &#34;name&#34;: &#34;Central African Republic&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+235&#34;,
+        &#34;name&#34;: &#34;Chad&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+56&#34;,
+        &#34;name&#34;: &#34;Chile&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+86&#34;,
+        &#34;name&#34;: &#34;China&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+61&#34;,
+        &#34;name&#34;: &#34;Christmas Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+61&#34;,
+        &#34;name&#34;: &#34;Cocos-Keeling Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+57&#34;,
+        &#34;name&#34;: &#34;Colombia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+269&#34;,
+        &#34;name&#34;: &#34;Comoros&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+242&#34;,
+        &#34;name&#34;: &#34;Congo&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+243&#34;,
+        &#34;name&#34;: &#34;Congo, Dem. Rep. of (Zaire)&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+682&#34;,
+        &#34;name&#34;: &#34;Cook Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+506&#34;,
+        &#34;name&#34;: &#34;Costa Rica&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+385&#34;,
+        &#34;name&#34;: &#34;Croatia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+53&#34;,
+        &#34;name&#34;: &#34;Cuba&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+599&#34;,
+        &#34;name&#34;: &#34;Curacao&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+537&#34;,
+        &#34;name&#34;: &#34;Cyprus&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+420&#34;,
+        &#34;name&#34;: &#34;Czech Republic&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+45&#34;,
+        &#34;name&#34;: &#34;Denmark&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+246&#34;,
+        &#34;name&#34;: &#34;Diego Garcia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+253&#34;,
+        &#34;name&#34;: &#34;Djibouti&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 767&#34;,
+        &#34;name&#34;: &#34;Dominica&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 809&#34;,
+        &#34;name&#34;: &#34;Dominican Republic&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+670&#34;,
+        &#34;name&#34;: &#34;East Timor&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+56&#34;,
+        &#34;name&#34;: &#34;Easter Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+593&#34;,
+        &#34;name&#34;: &#34;Ecuador&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+20&#34;,
+        &#34;name&#34;: &#34;Egypt&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+503&#34;,
+        &#34;name&#34;: &#34;El Salvador&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+240&#34;,
+        &#34;name&#34;: &#34;Equatorial Guinea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+291&#34;,
+        &#34;name&#34;: &#34;Eritrea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+372&#34;,
+        &#34;name&#34;: &#34;Estonia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+251&#34;,
+        &#34;name&#34;: &#34;Ethiopia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+500&#34;,
+        &#34;name&#34;: &#34;Falkland Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+298&#34;,
+        &#34;name&#34;: &#34;Faroe Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+679&#34;,
+        &#34;name&#34;: &#34;Fiji&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+358&#34;,
+        &#34;name&#34;: &#34;Finland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+33&#34;,
+        &#34;name&#34;: &#34;France&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+596&#34;,
+        &#34;name&#34;: &#34;French Antilles&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+594&#34;,
+        &#34;name&#34;: &#34;French Guiana&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+689&#34;,
+        &#34;name&#34;: &#34;French Polynesia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+241&#34;,
+        &#34;name&#34;: &#34;Gabon&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+220&#34;,
+        &#34;name&#34;: &#34;Gambia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+995&#34;,
+        &#34;name&#34;: &#34;Georgia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+49&#34;,
+        &#34;name&#34;: &#34;Germany&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+233&#34;,
+        &#34;name&#34;: &#34;Ghana&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+350&#34;,
+        &#34;name&#34;: &#34;Gibraltar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+30&#34;,
+        &#34;name&#34;: &#34;Greece&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+299&#34;,
+        &#34;name&#34;: &#34;Greenland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 473&#34;,
+        &#34;name&#34;: &#34;Grenada&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+590&#34;,
+        &#34;name&#34;: &#34;Guadeloupe&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 671&#34;,
+        &#34;name&#34;: &#34;Guam&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+502&#34;,
+        &#34;name&#34;: &#34;Guatemala&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+224&#34;,
+        &#34;name&#34;: &#34;Guinea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+245&#34;,
+        &#34;name&#34;: &#34;Guinea-Bissau&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+595&#34;,
+        &#34;name&#34;: &#34;Guyana&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+509&#34;,
+        &#34;name&#34;: &#34;Haiti&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+504&#34;,
+        &#34;name&#34;: &#34;Honduras&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+852&#34;,
+        &#34;name&#34;: &#34;Hong Kong SAR China&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+36&#34;,
+        &#34;name&#34;: &#34;Hungary&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+354&#34;,
+        &#34;name&#34;: &#34;Iceland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+91&#34;,
+        &#34;name&#34;: &#34;India&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+62&#34;,
+        &#34;name&#34;: &#34;Indonesia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+98&#34;,
+        &#34;name&#34;: &#34;Iran&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+964&#34;,
+        &#34;name&#34;: &#34;Iraq&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+353&#34;,
+        &#34;name&#34;: &#34;Ireland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+972&#34;,
+        &#34;name&#34;: &#34;Israel&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+39&#34;,
+        &#34;name&#34;: &#34;Italy&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+225&#34;,
+        &#34;name&#34;: &#34;Ivory Coast&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 876&#34;,
+        &#34;name&#34;: &#34;Jamaica&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+81&#34;,
+        &#34;name&#34;: &#34;Japan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+962&#34;,
+        &#34;name&#34;: &#34;Jordan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+7 7&#34;,
+        &#34;name&#34;: &#34;Kazakhstan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+254&#34;,
+        &#34;name&#34;: &#34;Kenya&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+686&#34;,
+        &#34;name&#34;: &#34;Kiribati&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+965&#34;,
+        &#34;name&#34;: &#34;Kuwait&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+996&#34;,
+        &#34;name&#34;: &#34;Kyrgyzstan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+856&#34;,
+        &#34;name&#34;: &#34;Laos&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+371&#34;,
+        &#34;name&#34;: &#34;Latvia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+961&#34;,
+        &#34;name&#34;: &#34;Lebanon&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+266&#34;,
+        &#34;name&#34;: &#34;Lesotho&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+231&#34;,
+        &#34;name&#34;: &#34;Liberia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+218&#34;,
+        &#34;name&#34;: &#34;Libya&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+423&#34;,
+        &#34;name&#34;: &#34;Liechtenstein&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+370&#34;,
+        &#34;name&#34;: &#34;Lithuania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+352&#34;,
+        &#34;name&#34;: &#34;Luxembourg&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+853&#34;,
+        &#34;name&#34;: &#34;Macau SAR China&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+389&#34;,
+        &#34;name&#34;: &#34;Macedonia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+261&#34;,
+        &#34;name&#34;: &#34;Madagascar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+265&#34;,
+        &#34;name&#34;: &#34;Malawi&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+60&#34;,
+        &#34;name&#34;: &#34;Malaysia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+960&#34;,
+        &#34;name&#34;: &#34;Maldives&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+223&#34;,
+        &#34;name&#34;: &#34;Mali&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+356&#34;,
+        &#34;name&#34;: &#34;Malta&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+692&#34;,
+        &#34;name&#34;: &#34;Marshall Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+596&#34;,
+        &#34;name&#34;: &#34;Martinique&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+222&#34;,
+        &#34;name&#34;: &#34;Mauritania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+230&#34;,
+        &#34;name&#34;: &#34;Mauritius&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+262&#34;,
+        &#34;name&#34;: &#34;Mayotte&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+52&#34;,
+        &#34;name&#34;: &#34;Mexico&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+691&#34;,
+        &#34;name&#34;: &#34;Micronesia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 808&#34;,
+        &#34;name&#34;: &#34;Midway Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+373&#34;,
+        &#34;name&#34;: &#34;Moldova&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+377&#34;,
+        &#34;name&#34;: &#34;Monaco&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+976&#34;,
+        &#34;name&#34;: &#34;Mongolia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+382&#34;,
+        &#34;name&#34;: &#34;Montenegro&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1664&#34;,
+        &#34;name&#34;: &#34;Montserrat&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+212&#34;,
+        &#34;name&#34;: &#34;Morocco&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+95&#34;,
+        &#34;name&#34;: &#34;Myanmar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+264&#34;,
+        &#34;name&#34;: &#34;Namibia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+674&#34;,
+        &#34;name&#34;: &#34;Nauru&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+977&#34;,
+        &#34;name&#34;: &#34;Nepal&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+31&#34;,
+        &#34;name&#34;: &#34;Netherlands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+599&#34;,
+        &#34;name&#34;: &#34;Netherlands Antilles&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 869&#34;,
+        &#34;name&#34;: &#34;Nevis&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+687&#34;,
+        &#34;name&#34;: &#34;New Caledonia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+64&#34;,
+        &#34;name&#34;: &#34;New Zealand&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+505&#34;,
+        &#34;name&#34;: &#34;Nicaragua&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+227&#34;,
+        &#34;name&#34;: &#34;Niger&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+234&#34;,
+        &#34;name&#34;: &#34;Nigeria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+683&#34;,
+        &#34;name&#34;: &#34;Niue&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+672&#34;,
+        &#34;name&#34;: &#34;Norfolk Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+850&#34;,
+        &#34;name&#34;: &#34;North Korea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 670&#34;,
+        &#34;name&#34;: &#34;Northern Mariana Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+47&#34;,
+        &#34;name&#34;: &#34;Norway&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+968&#34;,
+        &#34;name&#34;: &#34;Oman&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+92&#34;,
+        &#34;name&#34;: &#34;Pakistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+680&#34;,
+        &#34;name&#34;: &#34;Palau&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+970&#34;,
+        &#34;name&#34;: &#34;Palestinian Territory&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+507&#34;,
+        &#34;name&#34;: &#34;Panama&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+675&#34;,
+        &#34;name&#34;: &#34;Papua New Guinea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+595&#34;,
+        &#34;name&#34;: &#34;Paraguay&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+51&#34;,
+        &#34;name&#34;: &#34;Peru&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+63&#34;,
+        &#34;name&#34;: &#34;Philippines&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+48&#34;,
+        &#34;name&#34;: &#34;Poland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+351&#34;,
+        &#34;name&#34;: &#34;Portugal&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 787&#34;,
+        &#34;name&#34;: &#34;Puerto Rico&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+974&#34;,
+        &#34;name&#34;: &#34;Qatar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+262&#34;,
+        &#34;name&#34;: &#34;Reunion&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+40&#34;,
+        &#34;name&#34;: &#34;Romania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+7&#34;,
+        &#34;name&#34;: &#34;Russia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+250&#34;,
+        &#34;name&#34;: &#34;Rwanda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+685&#34;,
+        &#34;name&#34;: &#34;Samoa&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+378&#34;,
+        &#34;name&#34;: &#34;San Marino&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+966&#34;,
+        &#34;name&#34;: &#34;Saudi Arabia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+221&#34;,
+        &#34;name&#34;: &#34;Senegal&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+381&#34;,
+        &#34;name&#34;: &#34;Serbia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+248&#34;,
+        &#34;name&#34;: &#34;Seychelles&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+232&#34;,
+        &#34;name&#34;: &#34;Sierra Leone&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+65&#34;,
+        &#34;name&#34;: &#34;Singapore&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+421&#34;,
+        &#34;name&#34;: &#34;Slovakia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+386&#34;,
+        &#34;name&#34;: &#34;Slovenia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+677&#34;,
+        &#34;name&#34;: &#34;Solomon Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+27&#34;,
+        &#34;name&#34;: &#34;South Africa&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+500&#34;,
+        &#34;name&#34;: &#34;South Georgia and the South Sandwich Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+82&#34;,
+        &#34;name&#34;: &#34;South Korea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+34&#34;,
+        &#34;name&#34;: &#34;Spain&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+94&#34;,
+        &#34;name&#34;: &#34;Sri Lanka&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+249&#34;,
+        &#34;name&#34;: &#34;Sudan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+597&#34;,
+        &#34;name&#34;: &#34;Suriname&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+268&#34;,
+        &#34;name&#34;: &#34;Swaziland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+46&#34;,
+        &#34;name&#34;: &#34;Sweden&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+41&#34;,
+        &#34;name&#34;: &#34;Switzerland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+963&#34;,
+        &#34;name&#34;: &#34;Syria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+886&#34;,
+        &#34;name&#34;: &#34;Taiwan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+992&#34;,
+        &#34;name&#34;: &#34;Tajikistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+255&#34;,
+        &#34;name&#34;: &#34;Tanzania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+66&#34;,
+        &#34;name&#34;: &#34;Thailand&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+670&#34;,
+        &#34;name&#34;: &#34;Timor Leste&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+228&#34;,
+        &#34;name&#34;: &#34;Togo&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+690&#34;,
+        &#34;name&#34;: &#34;Tokelau&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+676&#34;,
+        &#34;name&#34;: &#34;Tonga&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 868&#34;,
+        &#34;name&#34;: &#34;Trinidad and Tobago&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+216&#34;,
+        &#34;name&#34;: &#34;Tunisia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+90&#34;,
+        &#34;name&#34;: &#34;Turkey&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+993&#34;,
+        &#34;name&#34;: &#34;Turkmenistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 649&#34;,
+        &#34;name&#34;: &#34;Turks and Caicos Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+688&#34;,
+        &#34;name&#34;: &#34;Tuvalu&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 340&#34;,
+        &#34;name&#34;: &#34;U.S. Virgin Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+256&#34;,
+        &#34;name&#34;: &#34;Uganda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+380&#34;,
+        &#34;name&#34;: &#34;Ukraine&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+971&#34;,
+        &#34;name&#34;: &#34;United Arab Emirates&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+44&#34;,
+        &#34;name&#34;: &#34;United Kingdom&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1&#34;,
+        &#34;name&#34;: &#34;United States&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+598&#34;,
+        &#34;name&#34;: &#34;Uruguay&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+998&#34;,
+        &#34;name&#34;: &#34;Uzbekistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+678&#34;,
+        &#34;name&#34;: &#34;Vanuatu&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+58&#34;,
+        &#34;name&#34;: &#34;Venezuela&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+84&#34;,
+        &#34;name&#34;: &#34;Vietnam&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 808&#34;,
+        &#34;name&#34;: &#34;Wake Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+681&#34;,
+        &#34;name&#34;: &#34;Wallis and Futuna&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+967&#34;,
+        &#34;name&#34;: &#34;Yemen&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+260&#34;,
+        &#34;name&#34;: &#34;Zambia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+255&#34;,
+        &#34;name&#34;: &#34;Zanzibar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+263&#34;,
+        &#34;name&#34;: &#34;Zimbabwe&#34;
+        }
+    ]
+    random_county = random.choice(countries)
+    miejce_zamieszkania = random_county[&#39;name&#39;]
+    kod_kraju = random_county[&#39;code&#39;]
+    nr_telefonu = random.randint(1000000000, 9999999999)
+    nr_telefonu = str(nr_telefonu)
+    nr_telefonu = kod_kraju + &#34;-&#34; + nr_telefonu[0:3] + &#34;-&#34; + nr_telefonu[3:6] + &#34;-&#34; + nr_telefonu[6:9]
+
+    return miejce_zamieszkania,nr_telefonu
+
+def gen_pesel():
+    &#34;&#34;&#34; Generuje losową datę urodzenia oraz pesel na podstawie wygenerowanej daty.
+        
+        Returns:
+            int: Zwraca PESEL.
+            str: Zwraca date urodzenia.
+    &#34;&#34;&#34;
+    year = random.randint(1900, 2020)
+    if year &lt;= 1999:
+        month = random.randint(1, 12)
+    elif year &gt;= 2000:
+        month = random.randint(1, 12) + 20
+    odd_months = (1, 3, 5, 7, 8, 10, 12, 21, 23, 25, 27, 28, 30, 32)
+    even_months = (4, 6, 9, 11, 24, 26, 29, 31)
+    if month in odd_months:
+        day = random.randint(1,31)
+    elif month in even_months:
+        day = random.randint(1,30)
+    else:
+        if year % 4 == 0 and year != 1900:
+            day = random.randint(1,29)
+        else:
+            day = random.randint(1,28)
+    four_random = random.randint(1000,9999)
+    four_random = str(four_random)
+    y = &#39;%02d&#39; % year
+    m = &#39;%02d&#39; % month
+    dd = &#39;%02d&#39; % day
+    data_ur = y + &#34;.&#34; + m + &#34;.&#34; + dd
+    a = y[2]
+    a = int(a)
+
+    b = y[3]
+    b = int(b)
+
+    c = m[0]
+    c = int(c)
+
+    d = m[1]
+    d = int(d)
+
+    e = dd[0]
+    e = int(e)
+
+    f = dd[1]
+    f = int(f)
+
+    g = four_random[0]
+    g = int(g)
+
+    h = four_random[1]
+    h = int(h)
+
+    i = four_random[2]
+    i = int(i)
+
+    j = four_random[3]
+    j = int(j)
+
+    check = a + 3 * b + 7 * c + 9 * d + e + 3 * f + 7 * g + 9 * h + i + 3 * j
+
+    if check % 10 == 0:
+        last_digit = 0
+    else:
+        last_digit = 10 - (check % 10)
+    
+    pesel = str(a) + str(b) + str(c) + str(d) + str(e) + str(f) + str(g) + str(h) + str(i) + str(j) + str(last_digit)
+    pesel = int(pesel)
+
+    return int(pesel), data_ur</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="Identity.identity.gen_identity"><code class="name flex">
+<span>def <span class="ident">gen_identity</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generuje losowe dane osobowe.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Słownik z wygenerowanymi danymi.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gen_identity():
+    &#34;&#34;&#34; Generuje losowe dane osobowe.
+
+        Returns:
+            dict: Słownik z wygenerowanymi danymi.
+
+    &#34;&#34;&#34;
+    pesel, data_ur = gen_pesel()
+    miejce_zamieszkania,nr_telefonu = gen_place()
+    plec,kolor_wlosow,kolor_oczu = gen_traits()
+    return pesel,data_ur,miejce_zamieszkania,nr_telefonu,plec,kolor_wlosow,kolor_oczu</code></pre>
+</details>
+</dd>
+<dt id="Identity.identity.gen_pesel"><code class="name flex">
+<span>def <span class="ident">gen_pesel</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generuje losową datę urodzenia oraz pesel na podstawie wygenerowanej daty.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>Zwraca PESEL.</dd>
+<dt><code>str</code></dt>
+<dd>Zwraca date urodzenia.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gen_pesel():
+    &#34;&#34;&#34; Generuje losową datę urodzenia oraz pesel na podstawie wygenerowanej daty.
+        
+        Returns:
+            int: Zwraca PESEL.
+            str: Zwraca date urodzenia.
+    &#34;&#34;&#34;
+    year = random.randint(1900, 2020)
+    if year &lt;= 1999:
+        month = random.randint(1, 12)
+    elif year &gt;= 2000:
+        month = random.randint(1, 12) + 20
+    odd_months = (1, 3, 5, 7, 8, 10, 12, 21, 23, 25, 27, 28, 30, 32)
+    even_months = (4, 6, 9, 11, 24, 26, 29, 31)
+    if month in odd_months:
+        day = random.randint(1,31)
+    elif month in even_months:
+        day = random.randint(1,30)
+    else:
+        if year % 4 == 0 and year != 1900:
+            day = random.randint(1,29)
+        else:
+            day = random.randint(1,28)
+    four_random = random.randint(1000,9999)
+    four_random = str(four_random)
+    y = &#39;%02d&#39; % year
+    m = &#39;%02d&#39; % month
+    dd = &#39;%02d&#39; % day
+    data_ur = y + &#34;.&#34; + m + &#34;.&#34; + dd
+    a = y[2]
+    a = int(a)
+
+    b = y[3]
+    b = int(b)
+
+    c = m[0]
+    c = int(c)
+
+    d = m[1]
+    d = int(d)
+
+    e = dd[0]
+    e = int(e)
+
+    f = dd[1]
+    f = int(f)
+
+    g = four_random[0]
+    g = int(g)
+
+    h = four_random[1]
+    h = int(h)
+
+    i = four_random[2]
+    i = int(i)
+
+    j = four_random[3]
+    j = int(j)
+
+    check = a + 3 * b + 7 * c + 9 * d + e + 3 * f + 7 * g + 9 * h + i + 3 * j
+
+    if check % 10 == 0:
+        last_digit = 0
+    else:
+        last_digit = 10 - (check % 10)
+    
+    pesel = str(a) + str(b) + str(c) + str(d) + str(e) + str(f) + str(g) + str(h) + str(i) + str(j) + str(last_digit)
+    pesel = int(pesel)
+
+    return int(pesel), data_ur</code></pre>
+</details>
+</dd>
+<dt id="Identity.identity.gen_place"><code class="name flex">
+<span>def <span class="ident">gen_place</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generuje losowe miejsce zamieszkania oraz numer telefonu na jego podstawie.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Zwraca miejsce zamieszkania.</dd>
+<dt><code>str</code></dt>
+<dd>Zwraca numer telefonu.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gen_place():
+    &#34;&#34;&#34; Generuje losowe miejsce zamieszkania oraz numer telefonu na jego podstawie.
+
+        Returns:
+            str: Zwraca miejsce zamieszkania.
+            str: Zwraca numer telefonu.
+    &#34;&#34;&#34;
+    countries =  [
+        {
+        &#34;code&#34;: &#34;+7 840&#34;,
+        &#34;name&#34;: &#34;Abkhazia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+93&#34;,
+        &#34;name&#34;: &#34;Afghanistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+355&#34;,
+        &#34;name&#34;: &#34;Albania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+213&#34;,
+        &#34;name&#34;: &#34;Algeria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 684&#34;,
+        &#34;name&#34;: &#34;American Samoa&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+376&#34;,
+        &#34;name&#34;: &#34;Andorra&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+244&#34;,
+        &#34;name&#34;: &#34;Angola&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 264&#34;,
+        &#34;name&#34;: &#34;Anguilla&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 268&#34;,
+        &#34;name&#34;: &#34;Antigua and Barbuda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+54&#34;,
+        &#34;name&#34;: &#34;Argentina&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+374&#34;,
+        &#34;name&#34;: &#34;Armenia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+297&#34;,
+        &#34;name&#34;: &#34;Aruba&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+247&#34;,
+        &#34;name&#34;: &#34;Ascension&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+61&#34;,
+        &#34;name&#34;: &#34;Australia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+672&#34;,
+        &#34;name&#34;: &#34;Australian External Territories&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+43&#34;,
+        &#34;name&#34;: &#34;Austria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+994&#34;,
+        &#34;name&#34;: &#34;Azerbaijan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 242&#34;,
+        &#34;name&#34;: &#34;Bahamas&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+973&#34;,
+        &#34;name&#34;: &#34;Bahrain&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+880&#34;,
+        &#34;name&#34;: &#34;Bangladesh&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 246&#34;,
+        &#34;name&#34;: &#34;Barbados&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 268&#34;,
+        &#34;name&#34;: &#34;Barbuda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+375&#34;,
+        &#34;name&#34;: &#34;Belarus&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+32&#34;,
+        &#34;name&#34;: &#34;Belgium&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+501&#34;,
+        &#34;name&#34;: &#34;Belize&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+229&#34;,
+        &#34;name&#34;: &#34;Benin&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 441&#34;,
+        &#34;name&#34;: &#34;Bermuda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+975&#34;,
+        &#34;name&#34;: &#34;Bhutan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+591&#34;,
+        &#34;name&#34;: &#34;Bolivia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+387&#34;,
+        &#34;name&#34;: &#34;Bosnia and Herzegovina&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+267&#34;,
+        &#34;name&#34;: &#34;Botswana&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+55&#34;,
+        &#34;name&#34;: &#34;Brazil&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+246&#34;,
+        &#34;name&#34;: &#34;British Indian Ocean Territory&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 284&#34;,
+        &#34;name&#34;: &#34;British Virgin Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+673&#34;,
+        &#34;name&#34;: &#34;Brunei&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+359&#34;,
+        &#34;name&#34;: &#34;Bulgaria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+226&#34;,
+        &#34;name&#34;: &#34;Burkina Faso&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+257&#34;,
+        &#34;name&#34;: &#34;Burundi&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+855&#34;,
+        &#34;name&#34;: &#34;Cambodia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+237&#34;,
+        &#34;name&#34;: &#34;Cameroon&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1&#34;,
+        &#34;name&#34;: &#34;Canada&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+238&#34;,
+        &#34;name&#34;: &#34;Cape Verde&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+ 345&#34;,
+        &#34;name&#34;: &#34;Cayman Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+236&#34;,
+        &#34;name&#34;: &#34;Central African Republic&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+235&#34;,
+        &#34;name&#34;: &#34;Chad&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+56&#34;,
+        &#34;name&#34;: &#34;Chile&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+86&#34;,
+        &#34;name&#34;: &#34;China&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+61&#34;,
+        &#34;name&#34;: &#34;Christmas Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+61&#34;,
+        &#34;name&#34;: &#34;Cocos-Keeling Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+57&#34;,
+        &#34;name&#34;: &#34;Colombia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+269&#34;,
+        &#34;name&#34;: &#34;Comoros&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+242&#34;,
+        &#34;name&#34;: &#34;Congo&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+243&#34;,
+        &#34;name&#34;: &#34;Congo, Dem. Rep. of (Zaire)&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+682&#34;,
+        &#34;name&#34;: &#34;Cook Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+506&#34;,
+        &#34;name&#34;: &#34;Costa Rica&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+385&#34;,
+        &#34;name&#34;: &#34;Croatia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+53&#34;,
+        &#34;name&#34;: &#34;Cuba&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+599&#34;,
+        &#34;name&#34;: &#34;Curacao&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+537&#34;,
+        &#34;name&#34;: &#34;Cyprus&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+420&#34;,
+        &#34;name&#34;: &#34;Czech Republic&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+45&#34;,
+        &#34;name&#34;: &#34;Denmark&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+246&#34;,
+        &#34;name&#34;: &#34;Diego Garcia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+253&#34;,
+        &#34;name&#34;: &#34;Djibouti&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 767&#34;,
+        &#34;name&#34;: &#34;Dominica&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 809&#34;,
+        &#34;name&#34;: &#34;Dominican Republic&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+670&#34;,
+        &#34;name&#34;: &#34;East Timor&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+56&#34;,
+        &#34;name&#34;: &#34;Easter Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+593&#34;,
+        &#34;name&#34;: &#34;Ecuador&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+20&#34;,
+        &#34;name&#34;: &#34;Egypt&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+503&#34;,
+        &#34;name&#34;: &#34;El Salvador&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+240&#34;,
+        &#34;name&#34;: &#34;Equatorial Guinea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+291&#34;,
+        &#34;name&#34;: &#34;Eritrea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+372&#34;,
+        &#34;name&#34;: &#34;Estonia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+251&#34;,
+        &#34;name&#34;: &#34;Ethiopia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+500&#34;,
+        &#34;name&#34;: &#34;Falkland Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+298&#34;,
+        &#34;name&#34;: &#34;Faroe Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+679&#34;,
+        &#34;name&#34;: &#34;Fiji&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+358&#34;,
+        &#34;name&#34;: &#34;Finland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+33&#34;,
+        &#34;name&#34;: &#34;France&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+596&#34;,
+        &#34;name&#34;: &#34;French Antilles&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+594&#34;,
+        &#34;name&#34;: &#34;French Guiana&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+689&#34;,
+        &#34;name&#34;: &#34;French Polynesia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+241&#34;,
+        &#34;name&#34;: &#34;Gabon&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+220&#34;,
+        &#34;name&#34;: &#34;Gambia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+995&#34;,
+        &#34;name&#34;: &#34;Georgia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+49&#34;,
+        &#34;name&#34;: &#34;Germany&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+233&#34;,
+        &#34;name&#34;: &#34;Ghana&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+350&#34;,
+        &#34;name&#34;: &#34;Gibraltar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+30&#34;,
+        &#34;name&#34;: &#34;Greece&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+299&#34;,
+        &#34;name&#34;: &#34;Greenland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 473&#34;,
+        &#34;name&#34;: &#34;Grenada&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+590&#34;,
+        &#34;name&#34;: &#34;Guadeloupe&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 671&#34;,
+        &#34;name&#34;: &#34;Guam&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+502&#34;,
+        &#34;name&#34;: &#34;Guatemala&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+224&#34;,
+        &#34;name&#34;: &#34;Guinea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+245&#34;,
+        &#34;name&#34;: &#34;Guinea-Bissau&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+595&#34;,
+        &#34;name&#34;: &#34;Guyana&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+509&#34;,
+        &#34;name&#34;: &#34;Haiti&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+504&#34;,
+        &#34;name&#34;: &#34;Honduras&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+852&#34;,
+        &#34;name&#34;: &#34;Hong Kong SAR China&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+36&#34;,
+        &#34;name&#34;: &#34;Hungary&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+354&#34;,
+        &#34;name&#34;: &#34;Iceland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+91&#34;,
+        &#34;name&#34;: &#34;India&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+62&#34;,
+        &#34;name&#34;: &#34;Indonesia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+98&#34;,
+        &#34;name&#34;: &#34;Iran&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+964&#34;,
+        &#34;name&#34;: &#34;Iraq&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+353&#34;,
+        &#34;name&#34;: &#34;Ireland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+972&#34;,
+        &#34;name&#34;: &#34;Israel&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+39&#34;,
+        &#34;name&#34;: &#34;Italy&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+225&#34;,
+        &#34;name&#34;: &#34;Ivory Coast&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 876&#34;,
+        &#34;name&#34;: &#34;Jamaica&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+81&#34;,
+        &#34;name&#34;: &#34;Japan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+962&#34;,
+        &#34;name&#34;: &#34;Jordan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+7 7&#34;,
+        &#34;name&#34;: &#34;Kazakhstan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+254&#34;,
+        &#34;name&#34;: &#34;Kenya&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+686&#34;,
+        &#34;name&#34;: &#34;Kiribati&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+965&#34;,
+        &#34;name&#34;: &#34;Kuwait&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+996&#34;,
+        &#34;name&#34;: &#34;Kyrgyzstan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+856&#34;,
+        &#34;name&#34;: &#34;Laos&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+371&#34;,
+        &#34;name&#34;: &#34;Latvia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+961&#34;,
+        &#34;name&#34;: &#34;Lebanon&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+266&#34;,
+        &#34;name&#34;: &#34;Lesotho&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+231&#34;,
+        &#34;name&#34;: &#34;Liberia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+218&#34;,
+        &#34;name&#34;: &#34;Libya&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+423&#34;,
+        &#34;name&#34;: &#34;Liechtenstein&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+370&#34;,
+        &#34;name&#34;: &#34;Lithuania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+352&#34;,
+        &#34;name&#34;: &#34;Luxembourg&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+853&#34;,
+        &#34;name&#34;: &#34;Macau SAR China&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+389&#34;,
+        &#34;name&#34;: &#34;Macedonia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+261&#34;,
+        &#34;name&#34;: &#34;Madagascar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+265&#34;,
+        &#34;name&#34;: &#34;Malawi&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+60&#34;,
+        &#34;name&#34;: &#34;Malaysia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+960&#34;,
+        &#34;name&#34;: &#34;Maldives&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+223&#34;,
+        &#34;name&#34;: &#34;Mali&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+356&#34;,
+        &#34;name&#34;: &#34;Malta&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+692&#34;,
+        &#34;name&#34;: &#34;Marshall Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+596&#34;,
+        &#34;name&#34;: &#34;Martinique&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+222&#34;,
+        &#34;name&#34;: &#34;Mauritania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+230&#34;,
+        &#34;name&#34;: &#34;Mauritius&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+262&#34;,
+        &#34;name&#34;: &#34;Mayotte&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+52&#34;,
+        &#34;name&#34;: &#34;Mexico&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+691&#34;,
+        &#34;name&#34;: &#34;Micronesia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 808&#34;,
+        &#34;name&#34;: &#34;Midway Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+373&#34;,
+        &#34;name&#34;: &#34;Moldova&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+377&#34;,
+        &#34;name&#34;: &#34;Monaco&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+976&#34;,
+        &#34;name&#34;: &#34;Mongolia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+382&#34;,
+        &#34;name&#34;: &#34;Montenegro&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1664&#34;,
+        &#34;name&#34;: &#34;Montserrat&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+212&#34;,
+        &#34;name&#34;: &#34;Morocco&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+95&#34;,
+        &#34;name&#34;: &#34;Myanmar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+264&#34;,
+        &#34;name&#34;: &#34;Namibia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+674&#34;,
+        &#34;name&#34;: &#34;Nauru&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+977&#34;,
+        &#34;name&#34;: &#34;Nepal&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+31&#34;,
+        &#34;name&#34;: &#34;Netherlands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+599&#34;,
+        &#34;name&#34;: &#34;Netherlands Antilles&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 869&#34;,
+        &#34;name&#34;: &#34;Nevis&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+687&#34;,
+        &#34;name&#34;: &#34;New Caledonia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+64&#34;,
+        &#34;name&#34;: &#34;New Zealand&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+505&#34;,
+        &#34;name&#34;: &#34;Nicaragua&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+227&#34;,
+        &#34;name&#34;: &#34;Niger&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+234&#34;,
+        &#34;name&#34;: &#34;Nigeria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+683&#34;,
+        &#34;name&#34;: &#34;Niue&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+672&#34;,
+        &#34;name&#34;: &#34;Norfolk Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+850&#34;,
+        &#34;name&#34;: &#34;North Korea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 670&#34;,
+        &#34;name&#34;: &#34;Northern Mariana Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+47&#34;,
+        &#34;name&#34;: &#34;Norway&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+968&#34;,
+        &#34;name&#34;: &#34;Oman&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+92&#34;,
+        &#34;name&#34;: &#34;Pakistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+680&#34;,
+        &#34;name&#34;: &#34;Palau&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+970&#34;,
+        &#34;name&#34;: &#34;Palestinian Territory&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+507&#34;,
+        &#34;name&#34;: &#34;Panama&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+675&#34;,
+        &#34;name&#34;: &#34;Papua New Guinea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+595&#34;,
+        &#34;name&#34;: &#34;Paraguay&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+51&#34;,
+        &#34;name&#34;: &#34;Peru&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+63&#34;,
+        &#34;name&#34;: &#34;Philippines&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+48&#34;,
+        &#34;name&#34;: &#34;Poland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+351&#34;,
+        &#34;name&#34;: &#34;Portugal&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 787&#34;,
+        &#34;name&#34;: &#34;Puerto Rico&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+974&#34;,
+        &#34;name&#34;: &#34;Qatar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+262&#34;,
+        &#34;name&#34;: &#34;Reunion&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+40&#34;,
+        &#34;name&#34;: &#34;Romania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+7&#34;,
+        &#34;name&#34;: &#34;Russia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+250&#34;,
+        &#34;name&#34;: &#34;Rwanda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+685&#34;,
+        &#34;name&#34;: &#34;Samoa&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+378&#34;,
+        &#34;name&#34;: &#34;San Marino&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+966&#34;,
+        &#34;name&#34;: &#34;Saudi Arabia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+221&#34;,
+        &#34;name&#34;: &#34;Senegal&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+381&#34;,
+        &#34;name&#34;: &#34;Serbia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+248&#34;,
+        &#34;name&#34;: &#34;Seychelles&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+232&#34;,
+        &#34;name&#34;: &#34;Sierra Leone&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+65&#34;,
+        &#34;name&#34;: &#34;Singapore&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+421&#34;,
+        &#34;name&#34;: &#34;Slovakia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+386&#34;,
+        &#34;name&#34;: &#34;Slovenia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+677&#34;,
+        &#34;name&#34;: &#34;Solomon Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+27&#34;,
+        &#34;name&#34;: &#34;South Africa&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+500&#34;,
+        &#34;name&#34;: &#34;South Georgia and the South Sandwich Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+82&#34;,
+        &#34;name&#34;: &#34;South Korea&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+34&#34;,
+        &#34;name&#34;: &#34;Spain&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+94&#34;,
+        &#34;name&#34;: &#34;Sri Lanka&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+249&#34;,
+        &#34;name&#34;: &#34;Sudan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+597&#34;,
+        &#34;name&#34;: &#34;Suriname&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+268&#34;,
+        &#34;name&#34;: &#34;Swaziland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+46&#34;,
+        &#34;name&#34;: &#34;Sweden&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+41&#34;,
+        &#34;name&#34;: &#34;Switzerland&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+963&#34;,
+        &#34;name&#34;: &#34;Syria&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+886&#34;,
+        &#34;name&#34;: &#34;Taiwan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+992&#34;,
+        &#34;name&#34;: &#34;Tajikistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+255&#34;,
+        &#34;name&#34;: &#34;Tanzania&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+66&#34;,
+        &#34;name&#34;: &#34;Thailand&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+670&#34;,
+        &#34;name&#34;: &#34;Timor Leste&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+228&#34;,
+        &#34;name&#34;: &#34;Togo&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+690&#34;,
+        &#34;name&#34;: &#34;Tokelau&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+676&#34;,
+        &#34;name&#34;: &#34;Tonga&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 868&#34;,
+        &#34;name&#34;: &#34;Trinidad and Tobago&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+216&#34;,
+        &#34;name&#34;: &#34;Tunisia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+90&#34;,
+        &#34;name&#34;: &#34;Turkey&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+993&#34;,
+        &#34;name&#34;: &#34;Turkmenistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 649&#34;,
+        &#34;name&#34;: &#34;Turks and Caicos Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+688&#34;,
+        &#34;name&#34;: &#34;Tuvalu&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 340&#34;,
+        &#34;name&#34;: &#34;U.S. Virgin Islands&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+256&#34;,
+        &#34;name&#34;: &#34;Uganda&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+380&#34;,
+        &#34;name&#34;: &#34;Ukraine&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+971&#34;,
+        &#34;name&#34;: &#34;United Arab Emirates&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+44&#34;,
+        &#34;name&#34;: &#34;United Kingdom&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1&#34;,
+        &#34;name&#34;: &#34;United States&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+598&#34;,
+        &#34;name&#34;: &#34;Uruguay&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+998&#34;,
+        &#34;name&#34;: &#34;Uzbekistan&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+678&#34;,
+        &#34;name&#34;: &#34;Vanuatu&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+58&#34;,
+        &#34;name&#34;: &#34;Venezuela&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+84&#34;,
+        &#34;name&#34;: &#34;Vietnam&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+1 808&#34;,
+        &#34;name&#34;: &#34;Wake Island&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+681&#34;,
+        &#34;name&#34;: &#34;Wallis and Futuna&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+967&#34;,
+        &#34;name&#34;: &#34;Yemen&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+260&#34;,
+        &#34;name&#34;: &#34;Zambia&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+255&#34;,
+        &#34;name&#34;: &#34;Zanzibar&#34;
+        },
+        {
+        &#34;code&#34;: &#34;+263&#34;,
+        &#34;name&#34;: &#34;Zimbabwe&#34;
+        }
+    ]
+    random_county = random.choice(countries)
+    miejce_zamieszkania = random_county[&#39;name&#39;]
+    kod_kraju = random_county[&#39;code&#39;]
+    nr_telefonu = random.randint(1000000000, 9999999999)
+    nr_telefonu = str(nr_telefonu)
+    nr_telefonu = kod_kraju + &#34;-&#34; + nr_telefonu[0:3] + &#34;-&#34; + nr_telefonu[3:6] + &#34;-&#34; + nr_telefonu[6:9]
+
+    return miejce_zamieszkania,nr_telefonu</code></pre>
+</details>
+</dd>
+<dt id="Identity.identity.gen_traits"><code class="name flex">
+<span>def <span class="ident">gen_traits</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generuje losowe atrybutu dla osoby.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Zwraca płeć.</dd>
+<dt><code>str</code></dt>
+<dd>Zwraca kolor włosów.</dd>
+<dt><code>str</code></dt>
+<dd>Zwraca kolor oczu.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gen_traits():
+    &#34;&#34;&#34; Generuje losowe atrybutu dla osoby.
+        
+        Returns:
+            str: Zwraca płeć.
+            str: Zwraca kolor włosów.
+            str: Zwraca kolor oczu.
+
+    &#34;&#34;&#34;
+    plec = random.choice([&#34;Mężczyzna&#34;,&#34;Kobieta&#34;])
+    kolor_wlosow = random.choice([&#34;Blond&#34;,&#34;Szatyn&#34;,&#34;Rude&#34;,&#34;Czarne&#34;])
+    kolor_oczu = random.choice([&#34;Niebieskie&#34;,&#34;Zielone&#34;,&#34;Brązowe&#34;])
+    return  plec,kolor_wlosow,kolor_oczu</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Identity" href="index.html">Identity</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="Identity.identity.gen_identity" href="#Identity.identity.gen_identity">gen_identity</a></code></li>
+<li><code><a title="Identity.identity.gen_pesel" href="#Identity.identity.gen_pesel">gen_pesel</a></code></li>
+<li><code><a title="Identity.identity.gen_place" href="#Identity.identity.gen_place">gen_place</a></code></li>
+<li><code><a title="Identity.identity.gen_traits" href="#Identity.identity.gen_traits">gen_traits</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

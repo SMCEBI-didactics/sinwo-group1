@@ -4,7 +4,8 @@ Flask-SQLAlchemy
 python-dateutil
 
 Modules/Dodaj/
+Modules/Calculator/
 Modules/Identity/
-
-
-
+Modules/Rock_paper/
+Modules/Tic_tac_toe/
+Modules/Waluty/
